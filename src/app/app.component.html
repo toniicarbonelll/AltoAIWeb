@@ -1,0 +1,205 @@
+<header class="nav-shell">
+  <nav class="container nav">
+    <a class="brand" href="#top"><span class="brand-mark">A</span><span>Alto AI</span></a>
+    <div class="nav-links">
+      <a href="#philosophy">Philosophy</a><a href="#services">What we offer</a><a href="#team">Team</a>
+      <button class="btn primary small" (click)="openBooking()">Book a demo</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">The AI data team for ecommerce</div>
+        <h1>Turn your ecommerce data into <span>your competitive advantage.</span></h1>
+        <p class="lead">We build and manage your data infrastructure, business intelligence and predictive AI models—so
+          your team can stop guessing and make more profitable decisions.</p>
+        <div class="actions">
+          <button class="btn primary" (click)="openBooking()">Book your free demo ↗</button>
+          <button class="btn secondary" (click)="scrollTo('case-study')">View the free walkthrough</button>
+        </div>
+        <div class="micro"><b>✓</b> 14-day free trial <b>✓</b> Fully managed setup <b>✓</b> No technical team required
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-aura"></div>
+        <img class="astronaut-art" src="/hero-astronaut-smooth.png"
+          alt="Astronaut surrounded by ecommerce platform planets">
+        <div class="dashboard">
+          <div class="dash-top"><span>● Live data connected</span><small>ECOMMERCE INTELLIGENCE</small></div>
+          <div class="metrics">
+            <article><small>Predicted revenue</small><strong>$412,800</strong><em>↑ 12.4% next month</em></article>
+            <article><small>Blended MER</small><strong>4.81</strong><em>↑ 0.36 vs last period</em></article>
+          </div>
+          <div class="chart">
+            <div><small>Sales forecast</small><strong>Next 8 weeks</strong></div>
+            <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="claude"><b>AI</b>
+          <div><strong>Claude Data Analyst</strong>
+            <p>“Returning-customer revenue fell 17%. Paid acquisition stayed stable.”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="container"><span>Powered by an ecommerce-ready data stack</span><b>Porter
+        Metrics</b><b>BigQuery</b><b>Claude</b><b>20+ Connectors</b><b>100+ Dashboards</b></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section-head center">
+        <div class="eyebrow">From data to decisions</div>
+        <h2>Your competitors have data, you will know what to do with it.</h2>
+      </header>
+      <div class="outcomes">
+        <article *ngFor="let x of outcomes"><i>{{x[0]}}</i>
+          <h3>{{x[1]}}</h3>
+          <p>{{x[2]}}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="philosophy">
+    <div class="container split">
+      <article class="panel stack">
+        <div class="eyebrow">Trust the system</div>
+        <h2>Your complete AI data stack</h2>
+        <div
+          *ngFor="let s of ['Connect every important source','Centralize it in BigQuery','Create blended business metrics','Analyze with dashboards and Claude','Predict what happens next']; let i=index">
+          <b>{{i+1}}</b><span>{{s}}</span>
+        </div>
+      </article>
+      <article class="panel philosophy">
+        <div class="eyebrow">Our philosophy</div>
+        <h2>Most agencies stop at dashboards. We do not.</h2>
+        <p>Dashboards tell you what happened. We help you understand why it happened—and what is likely to happen next.
+        </p>
+        <p>Every client receives data engineering, analytics and predictive data science in one managed service.</p>
+        <blockquote>We do not sell dashboards. We deliver better business decisions.</blockquote>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <header class="section-head">
+        <div class="eyebrow">What we offer</div>
+        <h2>Everything your ecommerce business needs to make better decisions.</h2>
+      </header>
+      <div class="services">
+        <article class="panel" *ngFor="let s of services"><small>{{s[0]}} · {{s[1]}}</small>
+          <h3>{{s[2]}}</h3>
+          <ul>
+            <li *ngFor="let b of s[3].split('|')">{{b}}</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container">
+      <header class="section-head center">
+        <div class="eyebrow">A managed monthly service</div>
+        <h2>What you receive every month</h2>
+      </header>
+      <div class="monthly"><b>Business performance review</b><b>Model performance report</b><b>Explainable AI
+          insights</b><b>Revenue forecasts</b><b>Strategic recommendations</b><b>Slack support and alerts</b></div>
+    </div>
+  </section>
+
+<section class="section" id="team">
+  <div class="container">
+
+    <header class="section-head center">
+      <div class="eyebrow">Meet your data team</div>
+      <h2>Small team. Direct access. Serious technical depth.</h2>
+    </header>
+
+    <div class="team">
+
+      <!-- Antoni -->
+      <a
+        class="team-link"
+        href="https://www.linkedin.com/in/tonijosepcarbonell/"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <article class="panel team-card">
+
+          <div class="team-photo">
+            <img src="/toni2.jpeg" alt="Antoni Carbonell">
+          </div>
+
+          <h3>Antoni Carbonell</h3>
+
+          <span class="team-role">
+            Founder & Data Scientist
+          </span>
+
+          <p>
+            AI experience across healthcare and financial risk,
+            focused on practical predictive systems for ecommerce.
+          </p>
+
+        </article>
+
+      </a>
+
+      <!-- Daniel -->
+      <a
+        class="team-link"
+        href="https://www.linkedin.com/in/daniel-gonzalez-muela/"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <article class="panel team-card">
+
+          <div class="team-photo">
+            <img src="/dani.jpeg" alt="Daniel Gonzalez">
+          </div>
+
+          <h3>Daniel Gonzalez</h3>
+
+          <span class="team-role">
+            Data Scientist
+          </span>
+
+          <p>
+            Master's in Mathematical Finance with expertise in
+            quantitative analysis, forecasting and predictive modeling.
+          </p>
+
+        </article>
+
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+  <section class="section" id="case-study">
+    <div class="container cta panel">
+      <div>
+        <div class="eyebrow">Free ecommerce AI walkthrough</div>
+        <h2>Explore the system before booking a call.</h2>
+        <p class="lead">See dashboards, Claude analysis, customer segmentation, churn prediction and sales forecasting
+          with realistic ecommerce data.</p>
+      </div><button class="btn primary" (click)="openBooking()">Reserve your free demo</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© {{year}} Alto AI · Data engineering, analytics and predictive AI for ecommerce.</div>
+</footer>

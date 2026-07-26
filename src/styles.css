@@ -1,0 +1,27 @@
+:root {
+  color-scheme: dark;
+  --bg:#05080d;
+  --panel:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.11);
+  --text:#f7f9fc;
+  --muted:#a7b0bf;
+  --blue:#1f7cff;
+  --blue-2:#4aa3ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-width:320px; color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 76% 7%,rgba(31,124,255,.14),transparent 28%),
+    radial-gradient(circle at 10% 0%,rgba(74,163,255,.08),transparent 26%),
+    linear-gradient(180deg,#05080d,#070b12 52%,#0a0f18);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.14;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:linear-gradient(#000,transparent 75%);
+}
+button,a{font:inherit}
