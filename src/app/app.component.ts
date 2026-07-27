@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  bookingUrl = 'https://cal.com/your-booking-link';
+  bookingUrl = 'https://calendly.com/toni-altoai';
   year = new Date().getFullYear();
   openBooking(): void { window.open(this.bookingUrl, '_blank', 'noopener,noreferrer'); }
   scrollTo(id: string): void { document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
