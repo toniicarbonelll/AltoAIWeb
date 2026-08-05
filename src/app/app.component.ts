@@ -10,8 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   bookingUrl = 'https://calendly.com/toni-altoai';
+  demoUrl = 'walkthrough/'
   year = new Date().getFullYear();
   openBooking(): void { window.open(this.bookingUrl, '_blank', 'noopener,noreferrer'); }
+  openDemo(): void { window.open(this.demoUrl, '_blank', 'noopener,noreferrer'); }
+
   scrollTo(id: string): void { document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
 
   outcomes = [

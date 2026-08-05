@@ -2,8 +2,19 @@
   <nav class="container nav">
     <a class="brand" href="#top"><span class="brand-mark">A</span><span>Alto AI</span></a>
     <div class="nav-links">
-      <a href="#philosophy">Philosophy</a><a href="#services">What we offer</a><a href="#team">Team</a>
-      <button class="btn primary small" (click)="openBooking()">Book a demo</button>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#services">What we offer</a>
+      <a href="#team">Team</a>
+
+
+
+      <button class="btn primary small" (click)="openBooking()">
+        Book a demo
+      </button>
+
+        <button href="walkthrough/" target="_blank" rel="noopener noreferrer" class="btn secondary small" (click)="openDemo()">
+        Free walkthrough
+        </button>
     </div>
   </nav>
 </header>
@@ -117,76 +128,70 @@
     </div>
   </section>
 
-<section class="section" id="team">
-  <div class="container">
+  <section class="section" id="team">
+    <div class="container">
 
-    <header class="section-head center">
-      <div class="eyebrow">Meet your data team</div>
-      <h2>Small team. Direct access. Serious technical depth.</h2>
-    </header>
+      <header class="section-head center">
+        <div class="eyebrow">Meet your data team</div>
+        <h2>Small team. Direct access. Serious technical depth.</h2>
+      </header>
 
-    <div class="team">
+      <div class="team">
 
-      <!-- Antoni -->
-      <a
-        class="team-link"
-        href="https://www.linkedin.com/in/tonijosepcarbonell/"
-        target="_blank"
-        rel="noopener noreferrer">
+        <!-- Antoni -->
+        <a class="team-link" href="https://www.linkedin.com/in/tonijosepcarbonell/" target="_blank"
+          rel="noopener noreferrer">
 
-        <article class="panel team-card">
+          <article class="panel team-card">
 
-          <div class="team-photo">
-            <img src="toni2.jpeg" alt="Antoni Carbonell">
-          </div>
+            <div class="team-photo">
+              <img src="toni2.jpeg" alt="Antoni Carbonell">
+            </div>
 
-          <h3>Antoni Carbonell</h3>
+            <h3>Antoni Carbonell</h3>
 
-          <span class="team-role">
-            Founder & Data Scientist
-          </span>
+            <span class="team-role">
+              Founder & Data Scientist
+            </span>
 
-          <p>
-            AI experience across healthcare and financial risk,
-            focused on practical predictive systems for ecommerce.
-          </p>
+            <p>
+              AI experience across healthcare and financial risk,
+              focused on practical predictive systems for ecommerce.
+            </p>
 
-        </article>
+          </article>
 
-      </a>
+        </a>
 
-      <!-- Daniel -->
-      <a
-        class="team-link"
-        href="https://www.linkedin.com/in/daniel-gonzalez-muela/"
-        target="_blank"
-        rel="noopener noreferrer">
+        <!-- Daniel -->
+        <a class="team-link" href="https://www.linkedin.com/in/daniel-gonzalez-muela/" target="_blank"
+          rel="noopener noreferrer">
 
-        <article class="panel team-card">
+          <article class="panel team-card">
 
-          <div class="team-photo">
-            <img src="dani.jpeg" alt="Daniel Gonzalez">
-          </div>
+            <div class="team-photo">
+              <img src="dani.jpeg" alt="Daniel Gonzalez">
+            </div>
 
-          <h3>Daniel Gonzalez</h3>
+            <h3>Daniel Gonzalez</h3>
 
-          <span class="team-role">
-            Data Scientist
-          </span>
+            <span class="team-role">
+              Data Scientist
+            </span>
 
-          <p>
-            Master's in Mathematical Finance with expertise in
-            quantitative analysis, forecasting and predictive modeling.
-          </p>
+            <p>
+              Master's in Mathematical Finance with expertise in
+              quantitative analysis, forecasting and predictive modeling.
+            </p>
 
-        </article>
+          </article>
 
-      </a>
+        </a>
+
+      </div>
 
     </div>
-
-  </div>
-</section>
+  </section>
 
   <section class="section" id="case-study">
     <div class="container cta panel">
@@ -195,7 +200,7 @@
         <h2>Explore the system before booking a call.</h2>
         <p class="lead">See dashboards, Claude analysis, customer segmentation, churn prediction and sales forecasting
           with realistic ecommerce data.</p>
-      </div><button class="btn primary" (click)="openBooking()">Reserve your free demo</button>
+      </div><button class="btn primary" (click)="openDemo()">View the free walkthrough</button>
     </div>
   </section>
 </main>
