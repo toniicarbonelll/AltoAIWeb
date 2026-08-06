@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
 
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Alto.AI × PorterMetrics</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Alto.AI × PorterMetrics</title>
+<style>
     :root {
       --blue: #0871f9;
       --blue2: #156eea;
@@ -2995,833 +2995,956 @@
       font-size: 16px;
       color: #334e7a
     }
-  </style>
-</head>
 
+
+    /* ===== Expanded AI journey: Steps 5–7 ===== */
+    .sidebar{padding:25px 14px 10px}
+    .road{margin-left:10px;margin-bottom:9px}
+    .sideitem{height:72px;grid-template-columns:42px 1fr;gap:10px;padding:7px 10px}
+    .num,.mail{width:42px;height:42px;font-size:20px}
+    .st{font-size:14px;line-height:1.15}
+    .ss{font-size:12px;margin-top:5px}
+    .sideitem.last{padding-top:7px}
+
+    .ai-page{position:absolute;left:300px;right:0;top:94px;bottom:135px;background:radial-gradient(circle at 85% 6%,#0f6fff0d,transparent 30%),linear-gradient(#fbfdff,#f7fbff);opacity:0;visibility:hidden;transform:translateX(24px);transition:.32s ease;pointer-events:none}
+    .ai-page.activepage{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+    .ai-page.before{transform:translateX(-24px)}
+    .ai-intro{position:absolute;left:35px;top:43px;width:270px}
+    .ai-intro .step{margin-bottom:26px}
+    .ai-intro h1{margin:0;font-size:44px;line-height:1.05;letter-spacing:-1.8px}
+    .ai-intro h1 span{display:block;color:#126ce8}
+    .ai-intro>p{margin:20px 0 24px;font-size:16px;line-height:1.55;color:#3b5480}
+    .ai-benefits{border:1px solid #e2ebf6;border-radius:15px;background:linear-gradient(#fff,#f8fbff);padding:15px 14px;box-shadow:0 12px 28px #2253940e}
+    .ai-benefit{display:grid;grid-template-columns:42px 1fr;gap:11px;align-items:start;padding:9px 0}
+    .ai-benefit+.ai-benefit{border-top:1px solid #edf2f8}
+    .ai-icon{width:38px;height:38px;border-radius:50%;background:#eef5ff;display:grid;place-items:center;color:#126ce8}
+    .ai-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .ai-benefit b{font-size:12px}.ai-benefit p{margin:5px 0 0;font-size:10px;line-height:1.45;color:#425a83}
+    .ai-note{margin-top:15px;border:1px solid #e2ebf6;border-radius:13px;background:#fff;padding:14px 14px 14px 54px;position:relative;font-size:11px;line-height:1.5;color:#294778}
+    .ai-note .ai-icon{position:absolute;left:11px;top:12px;width:34px;height:34px}
+    .ai-shell{position:absolute;left:330px;right:30px;top:22px;bottom:22px;background:#fff;border:1px solid #dfe9f5;border-radius:18px;box-shadow:0 20px 48px #22539418;padding:22px;overflow:hidden}
+    .ai-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px}
+    .ai-head h2{margin:0;font-size:20px}.ai-head p{margin:6px 0 0;font-size:11px;color:#536b91}
+    .ai-select{height:38px;padding:0 14px;border:1px solid #dce7f4;border-radius:9px;background:#fff;color:#294778;display:flex;align-items:center;gap:12px;font-size:11px}
+
+    /* Step 5 */
+    .modelcards-new{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+    .modelcard-new{height:238px;border:1px solid #dfe8f4;border-radius:13px;padding:17px 15px;background:#fff;position:relative}
+    .modelcard-new.more{border-style:dashed;text-align:center;padding-top:31px}
+    .modelcard-new h3{margin:12px 0 14px;font-size:15px;line-height:1.25}.modelcard-new p{margin:0;font-size:10px;line-height:1.6;color:#425a83}.modelcard-new em{position:absolute;left:15px;bottom:17px;font-size:10px;font-style:normal;color:#17a969;font-weight:750}
+    .modelcard-new.more em{position:static;display:block;color:#425a83;margin-top:10px;line-height:1.7;font-weight:500}
+    .model-plus{width:44px;height:44px;border:1px dashed #7652ff;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;color:#7652ff;font-size:24px}
+    .forecast-wrap{border-top:1px solid #e7eef7;padding-top:18px}
+    .forecast-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.forecast-title h3{margin:0;font-size:16px}
+    .forecast-grid{display:grid;grid-template-columns:1fr 235px;gap:16px}
+    .forecast-chart{height:295px;border:1px solid #e2ebf6;border-radius:13px;padding:17px 17px 14px;position:relative;background:repeating-linear-gradient(to bottom,#fff 0 48px,#edf2f8 49px)}
+    .forecast-chart svg{position:absolute;left:52px;right:18px;top:28px;bottom:45px;width:calc(100% - 70px);height:220px}
+    .forecast-axis{position:absolute;left:13px;top:26px;bottom:44px;display:flex;flex-direction:column;justify-content:space-between;font-size:9px;color:#61799d}
+    .forecast-months{position:absolute;left:58px;right:20px;bottom:16px;display:flex;justify-content:space-between;font-size:9px;color:#61799d}
+    .forecast-labels{position:absolute;left:25%;right:24%;bottom:-2px;display:flex;justify-content:space-between;font-size:10px;font-weight:750}.forecast-labels span:first-child{color:#0871f9}.forecast-labels span:last-child{color:#7652ff}
+    .forecast-stats{height:295px;border:1px solid #e1e8f4;border-radius:13px;background:linear-gradient(#fbfaff,#f7f5ff);padding:20px}
+    .forecast-stat{padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid #e5e7f2}.forecast-stat:last-child{border:0;margin:0}.forecast-stat small{font-size:10px;color:#425a83}.forecast-stat strong{display:block;font-size:22px;margin:8px 0}.forecast-stat em{font-size:10px;color:#16a86a;font-style:normal}
+    .confbar{height:5px;background:#e5ebf3;border-radius:99px;margin-top:12px}.confbar i{display:block;height:100%;width:92%;background:#20b96b;border-radius:99px}
+
+    /* Step 6 monitoring */
+    .metriccards-new{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+    .metriccard-new{height:205px;border:1px solid #dfe8f4;border-radius:13px;padding:17px 15px;position:relative;background:#fff}
+    .metriccard-new small{font-size:10px;color:#425a83}.metriccard-new strong{display:block;font-size:21px;margin:10px 0}.metriccard-new em{font-style:normal;color:#16a86a;font-size:9px}
+    .mini-spark{position:absolute;left:15px;right:15px;bottom:17px;height:55px}.mini-spark svg{width:100%;height:100%}
+    .monitor-grid{display:grid;grid-template-columns:1fr 205px;gap:16px}
+    .performance-chart{height:306px;border:1px solid #e2ebf6;border-radius:13px;padding:17px;position:relative}
+    .performance-chart h3,.status-card h3{margin:0;font-size:13px}
+    .legend-monitor{display:flex;gap:22px;margin:16px 0;font-size:9px;color:#425a83}.legend-monitor span:before{content:"";display:inline-block;width:13px;height:3px;border-radius:99px;margin-right:6px;vertical-align:middle;background:var(--c)}
+    .monitor-plot{position:absolute;left:48px;right:20px;top:75px;bottom:40px;background:repeating-linear-gradient(to bottom,transparent 0 43px,#edf2f8 44px);border-left:1px solid #e5edf7;border-bottom:1px solid #e5edf7}.monitor-plot svg{width:100%;height:100%}
+    .monitor-axis{position:absolute;left:15px;top:79px;bottom:38px;display:flex;flex-direction:column;justify-content:space-between;font-size:8px;color:#61799d}.monitor-dates{position:absolute;left:55px;right:23px;bottom:17px;display:flex;justify-content:space-between;font-size:8px;color:#61799d}
+    .status-card{height:306px;border:1px solid #e2ebf6;border-radius:13px;padding:18px}
+    .status-row{display:grid;grid-template-columns:20px 1fr;gap:10px;margin:21px 0;font-size:10px;line-height:1.45}.status-row b{color:#16a86a;font-size:14px}.status-row span{display:block;color:#16a86a;margin-top:4px}
+    .monitor-alert{height:94px;margin-top:18px;border:1px solid #e2e3f5;border-radius:13px;background:linear-gradient(90deg,#faf9ff,#fff);display:flex;align-items:center;padding:0 20px;gap:15px}.monitor-alert .ai-icon{background:#f0eaff;color:#7652ff}.monitor-alert b{font-size:12px}.monitor-alert p{margin:5px 0 0;font-size:10px;color:#425a83}.alert-btn{margin-left:auto;height:42px;padding:0 18px;border:1px solid #d8d8f5;border-radius:10px;background:#fff;color:#294778;font-size:10px;font-weight:750}
+
+    /* Step 7 explainability */
+    .xai-top{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-bottom:16px}
+    .factor-card,.read-card{height:366px;border:1px solid #e2ebf6;border-radius:13px;padding:20px;background:#fff}
+    .factor-card h3,.read-card h3{margin:0;font-size:14px}.factor-card>p{margin:6px 0 18px;font-size:10px;color:#425a83}
+    .factor-row{display:grid;grid-template-columns:145px 1fr 44px;align-items:center;gap:8px;margin:12px 0;font-size:10px}.factorbar{height:10px;border-radius:0 4px 4px 0;background:var(--bar);width:var(--w)}.factor-value{font-size:10px}.factor-axis{display:flex;justify-content:space-between;margin:12px 42px 0 145px;font-size:9px}.factor-axis span:first-child{color:#7652ff}.factor-axis span:last-child{color:#ff0d61}
+    .read-point{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;margin:24px 0}.read-point .ai-icon{width:34px;height:34px}.read-point b{font-size:11px}.read-point p{margin:5px 0 0;font-size:10px;line-height:1.5;color:#425a83}.insight-box{margin-top:25px;border:1px solid #d8e4f5;border-radius:10px;padding:15px;display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:10px;line-height:1.5}
+    .xai-bottom{display:grid;grid-template-columns:.92fr 1.05fr .98fr;gap:16px}
+    .xai-card-new{height:279px;border:1px solid #e2ebf6;border-radius:13px;padding:18px;background:#fff}.xai-card-new.prediction{background:linear-gradient(#fbfaff,#f7f5ff)}.xai-card-new h3{margin:0 0 18px;font-size:14px}.meaning-row{display:grid;grid-template-columns:38px 1fr;gap:11px;margin:17px 0}.meaning-row .ai-icon{width:34px;height:34px}.meaning-row b{font-size:10px}.meaning-row p{margin:5px 0 0;font-size:9px;line-height:1.5;color:#425a83}.action-row{display:grid;grid-template-columns:20px 1fr;gap:8px;margin:19px 0;font-size:10px}.action-row b{color:#16a86a}.xai-btn{height:40px;border:1px solid #d7e3f4;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#0871f9;font-size:10px;font-weight:750;margin-top:16px}.risk{color:#ff0d61;font-size:17px;font-weight:850}.riskbar{height:7px;border-radius:99px;background:linear-gradient(90deg,#27b86f,#f5cc16,#ff0d61);margin:13px 0 18px;position:relative}.riskbar:after{content:"";position:absolute;right:3%;top:-4px;width:15px;height:15px;border-radius:50%;background:#fff;box-shadow:0 2px 8px #213e6825}.pred-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:18px;font-size:9px;color:#425a83}.pred-grid b{display:block;color:#0c1837;margin-top:5px}
+
+  
+    /* ===== Final fit corrections ===== */
+
+    /* Page 5: give the forecast more room and prevent bottom-label clipping */
+    #page5 .modelcards-new{
+      margin-bottom:12px;
+    }
+    #page5 .modelcard-new{
+      height:218px;
+      padding:15px 14px;
+    }
+    #page5 .forecast-wrap{
+      padding-top:14px;
+    }
+    #page5 .forecast-title{
+      margin-bottom:10px;
+    }
+    #page5 .forecast-grid{
+      grid-template-columns:minmax(0,1fr) 220px;
+      gap:14px;
+    }
+    #page5 .forecast-chart,
+    #page5 .forecast-stats{
+      height:322px;
+    }
+    #page5 .forecast-chart{
+      padding-bottom:40px;
+      background:repeating-linear-gradient(to bottom,#fff 0 51px,#edf2f8 52px);
+    }
+    #page5 .forecast-chart svg{
+      top:25px;
+      bottom:68px;
+      height:226px;
+    }
+    #page5 .forecast-axis{
+      top:24px;
+      bottom:65px;
+    }
+    #page5 .forecast-months{
+      bottom:31px;
+    }
+    #page5 .forecast-labels{
+      left:29%;
+      right:26%;
+      bottom:9px;
+      font-size:10px;
+      white-space:nowrap;
+    }
+    #page5 .forecast-stats{
+      padding:17px 18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    #page5 .forecast-stat{
+      padding-bottom:13px;
+      margin-bottom:12px;
+    }
+    #page5 .forecast-stat:last-child{
+      padding-bottom:0;
+    }
+    #page5 .forecast-stat strong{
+      font-size:20px;
+      margin:6px 0;
+      line-height:1.05;
+    }
+    #page5 .forecast-stat small{
+      line-height:1.3;
+      display:block;
+    }
+
+    /* Page 7: simplify the composition and increase whitespace */
+    #page7 .ai-shell{
+      padding:24px;
+    }
+    #page7 .xai-top{
+      grid-template-columns:1.28fr .72fr;
+      gap:18px;
+      margin-bottom:18px;
+    }
+    #page7 .factor-card,
+    #page7 .read-card{
+      height:394px;
+      padding:22px;
+    }
+    #page7 .factor-row{
+      margin:18px 0;
+      grid-template-columns:150px 1fr 42px;
+    }
+    #page7 .factor-axis{
+      margin-top:22px;
+    }
+    #page7 .read-point{
+      margin:32px 0;
+    }
+    #page7 .insight-box{
+      margin-top:36px;
+      padding:18px;
+    }
+    #page7 .xai-bottom{
+      grid-template-columns:1.12fr .88fr;
+      gap:18px;
+    }
+    #page7 .xai-card-new{
+      height:250px;
+      padding:20px;
+    }
+    #page7 .action-row{
+      margin:22px 0;
+    }
+    #page7 .xai-btn{
+      margin-top:20px;
+    }
+
+
+    /* ===== Page 7 final refinement: retain full content, improve fit ===== */
+    #page7 .ai-shell{
+      padding:19px 20px 18px;
+    }
+    #page7 .ai-head{
+      margin-bottom:12px;
+    }
+    #page7 .xai-top{
+      grid-template-columns:1.15fr .85fr;
+      gap:14px;
+      margin-bottom:12px;
+    }
+    #page7 .factor-card,
+    #page7 .read-card{
+      height:315px;
+      padding:16px 17px;
+    }
+    #page7 .factor-card h3,
+    #page7 .read-card h3{
+      font-size:13px;
+    }
+    #page7 .factor-card>p{
+      margin:4px 0 10px;
+      font-size:9px;
+    }
+    #page7 .factor-row{
+      grid-template-columns:132px 1fr 39px;
+      gap:7px;
+      margin:7px 0;
+      font-size:9px;
+    }
+    #page7 .factorbar{
+      height:8px;
+    }
+    #page7 .factor-value{
+      font-size:9px;
+    }
+    #page7 .factor-axis{
+      margin:9px 38px 0 132px;
+      font-size:8px;
+    }
+    #page7 .read-point{
+      grid-template-columns:34px 1fr;
+      gap:10px;
+      margin:17px 0;
+    }
+    #page7 .read-point .ai-icon{
+      width:31px;
+      height:31px;
+    }
+    #page7 .read-point b{
+      font-size:10px;
+    }
+    #page7 .read-point p{
+      margin:3px 0 0;
+      font-size:9px;
+      line-height:1.4;
+    }
+    #page7 .insight-box{
+      margin-top:16px;
+      padding:12px;
+      grid-template-columns:25px 1fr;
+      gap:8px;
+      font-size:9px;
+      line-height:1.45;
+    }
+    #page7 .xai-bottom{
+      grid-template-columns:.92fr 1.05fr .98fr;
+      gap:14px;
+    }
+    #page7 .xai-card-new{
+      height:260px;
+      padding:15px 16px;
+    }
+    #page7 .xai-card-new h3{
+      margin-bottom:12px;
+      font-size:13px;
+    }
+    #page7 .meaning-row{
+      grid-template-columns:34px 1fr;
+      gap:9px;
+      margin:11px 0;
+    }
+    #page7 .meaning-row .ai-icon{
+      width:31px;
+      height:31px;
+    }
+    #page7 .meaning-row b,
+    #page7 .action-row{
+      font-size:9px;
+    }
+    #page7 .meaning-row p{
+      margin-top:3px;
+      font-size:8px;
+      line-height:1.4;
+    }
+    #page7 .action-row{
+      margin:13px 0;
+    }
+    #page7 .xai-btn{
+      height:35px;
+      margin-top:10px;
+      font-size:9px;
+    }
+    #page7 .riskbar{
+      margin:10px 0 12px;
+    }
+    #page7 .pred-grid{
+      margin-top:12px;
+      gap:10px;
+      font-size:8px;
+    }
+</style>
+</head>
 <body>
-  <div class="viewport">
-    <div class="stage" id="stage">
-      <header class="header">
-        <div class="brand">
-          <div class="alto">Alto.AI</div>
-          <div class="cross">×</div>
-          <div class="porter">
-            <div class="porterlogo"><i></i><i></i><i></i></div>portermetrics
+<div class="viewport">
+<div class="stage" id="stage">
+<header class="header">
+<div class="brand">
+<div class="alto">Alto.AI</div>
+<div class="cross">×</div>
+<div class="porter">
+<div class="porterlogo"><i></i><i></i><i></i></div>portermetrics
           </div>
-        </div>
-        <div class="actions">
-          <div class="status"><b></b>Demo Experience</div><button class="book" data-demo>Book a Demo
+</div>
+<div class="actions">
+<div class="status"><b></b>Demo Experience</div><button class="book" data-demo="">Book a Demo
             <span>→</span></button>
-        </div>
-      </header>
-      <aside class="sidebar">
-        <div class="road">DEMO ROADMAP</div>
-        <div class="sideitem active slidelink" data-slide="0">
-          <div class="num">1</div>
-          <div>
-            <div class="st">Connect your sources</div>
-            <div class="ss">30+ connectors</div>
-          </div>
-        </div>
-        <div class="sideitem slidelink" data-slide="1">
-          <div class="num">2</div>
-          <div>
-            <div class="st">Choose your visuals</div>
-            <div class="ss">100+ dashboards</div>
-          </div>
-        </div>
-        <div class="sideitem slidelink" data-slide="2">
-          <div class="num">3</div>
-          <div>
-            <div class="st">Connect to BigQuery</div>
-            <div class="ss">BigQuery</div>
-          </div>
-        </div>
-        <div class="sideitem slidelink" data-slide="3">
-          <div class="num">4</div>
-          <div>
-            <div class="st">Speak to Claude</div>
-            <div class="ss">AI Data Assistant</div>
-          </div>
-        </div>
-        <div class="sideitem slidelink" data-slide="4">
-          <div class="num">5</div>
-          <div>
-            <div class="st">Use AI to predict</div>
-            <div class="ss">Proprietary Models</div>
-          </div>
-        </div>
-        <div class="sideitem slidelink" data-slide="5">
-          <div class="num">6</div>
-          <div>
-            <div class="st">More &amp; Support</div>
-            <div class="ss">We've got you</div>
-          </div>
-        </div>
-        <div class="sideitem last slidelink" data-slide="6">
-          <div class="mail">✉</div>
-          <div>
-            <div class="st">Let's get started</div>
-            <div class="ss">Reserve a demo</div>
-          </div>
-        </div>
-      </aside>
-      <main class="main page activepage" id="page1">
-        <section class="intro">
-          <div class="step">STEP 1</div>
-          <h1>Connect <span>your sources</span></h1>
-          <p>Choose from 30+ connectors to bring all your marketing, ecommerce and CRM data together.</p>
-          <div class="destcard">
-            <div class="dest">
-              <div class="look"></div>
-              <div><small>Visualize in</small><strong>Looker Studio</strong></div>
-            </div>
-            <div class="vline"></div>
-            <div class="dest">
-              <div class="bq">BQ</div>
-              <div><small>Or load into</small><strong>BigQuery</strong></div>
-            </div>
-          </div>
-          <div class="benefits">
-            <div class="benefit"><b>✓</b><span>No coding<br>required</span></div>
-            <div class="benefit"><b>✓</b><span>Automatic<br>sync</span></div>
-            <div class="benefit"><b>✓</b><span>Blazing fast<br>setup</span></div>
-          </div>
-        </section>
-        <section class="product">
-          <h2>Select your data sources</h2>
-          <div class="pgrid">
-            <div class="leftpanel">
-              <div class="search">Search connectors...</div>
-              <div class="connectors">
-                <button class="conn active"><span class="check">✓</span><span class="logo meta">∞</span><span
-                    class="label">Facebook<br>Ads</span></button><button class="conn"><span class="logo g">G</span><span
-                    class="label">Google Ads</span></button><button class="conn"><span class="logo ga">GA</span><span
-                    class="label">Google<br>Analytics 4</span></button><button class="conn"><span
-                    class="logo shop">S</span><span class="label">Shopify</span></button>
-                <button class="conn"><span class="logo tt">♪</span><span class="label">TikTok Ads</span></button><button
-                  class="conn"><span class="logo kl">K</span><span class="label">Klaviyo</span></button><button
-                  class="conn"><span class="logo hub">H</span><span class="label">HubSpot</span></button><button
-                  class="conn"><span class="logo in">in</span><span class="label">LinkedIn Ads</span></button>
-                <button class="conn"><span class="logo tw">t</span><span class="label">Twitter
+</div>
+</header>
+<aside class="sidebar">
+<div class="road">DEMO ROADMAP</div>
+<div class="sideitem active slidelink" data-slide="0"><div class="num">1</div><div><div class="st">Connect your sources</div><div class="ss">30+ connectors</div></div></div>
+<div class="sideitem slidelink" data-slide="1"><div class="num">2</div><div><div class="st">Choose your visuals</div><div class="ss">100+ dashboards</div></div></div>
+<div class="sideitem slidelink" data-slide="2"><div class="num">3</div><div><div class="st">Connect to BigQuery</div><div class="ss">BigQuery</div></div></div>
+<div class="sideitem slidelink" data-slide="3"><div class="num">4</div><div><div class="st">Speak to Claude</div><div class="ss">AI Data Assistant</div></div></div>
+<div class="sideitem slidelink" data-slide="4"><div class="num">5</div><div><div class="st">Use AI to predict</div><div class="ss">Proprietary Models</div></div></div>
+<div class="sideitem slidelink" data-slide="5"><div class="num">6</div><div><div class="st">Monitor your models</div><div class="ss">Model Performance</div></div></div>
+<div class="sideitem slidelink" data-slide="6"><div class="num">7</div><div><div class="st">Understand every result</div><div class="ss">Explainability &amp; Insights</div></div></div>
+<div class="sideitem slidelink" data-slide="7"><div class="num">8</div><div><div class="st">More &amp; Support</div><div class="ss">We've got you</div></div></div>
+<div class="sideitem last slidelink" data-slide="8"><div class="mail">✉</div><div><div class="st">Let's get started</div><div class="ss">Reserve a demo</div></div></div>
+</aside>
+<main class="main page activepage" id="page1">
+<section class="intro">
+<div class="step">STEP 1</div>
+<h1>Connect <span>your sources</span></h1>
+<p>Choose from 30+ connectors to bring all your marketing, ecommerce and CRM data together.</p>
+<div class="destcard">
+<div class="dest">
+<div class="look"></div>
+<div><small>Visualize in</small><strong>Looker Studio</strong></div>
+</div>
+<div class="vline"></div>
+<div class="dest">
+<div class="bq">BQ</div>
+<div><small>Or load into</small><strong>BigQuery</strong></div>
+</div>
+</div>
+<div class="benefits">
+<div class="benefit"><b>✓</b><span>No coding<br/>required</span></div>
+<div class="benefit"><b>✓</b><span>Automatic<br/>sync</span></div>
+<div class="benefit"><b>✓</b><span>Blazing fast<br/>setup</span></div>
+</div>
+</section>
+<section class="product">
+<h2>Select your data sources</h2>
+<div class="pgrid">
+<div class="leftpanel">
+<div class="search">Search connectors...</div>
+<div class="connectors">
+<button class="conn active"><span class="check">✓</span><span class="logo meta">∞</span><span class="label">Facebook<br/>Ads</span></button><button class="conn"><span class="logo g">G</span><span class="label">Google Ads</span></button><button class="conn"><span class="logo ga">GA</span><span class="label">Google<br/>Analytics 4</span></button><button class="conn"><span class="logo shop">S</span><span class="label">Shopify</span></button>
+<button class="conn"><span class="logo tt">♪</span><span class="label">TikTok Ads</span></button><button class="conn"><span class="logo kl">K</span><span class="label">Klaviyo</span></button><button class="conn"><span class="logo hub">H</span><span class="label">HubSpot</span></button><button class="conn"><span class="logo in">in</span><span class="label">LinkedIn Ads</span></button>
+<button class="conn"><span class="logo tw">t</span><span class="label">Twitter
                     Ads</span></button><button class="conn"><span class="logo amz">a</span><span class="label">Amazon
                     Ads</span></button><button class="conn"><span class="logo pin">P</span><span class="label">Pinterest
                     Ads</span></button><button class="conn"><span class="logo yt">▶</span><span class="label">YouTube
                     Ads</span></button>
-                <button class="conn"><span class="logo snap">S</span><span class="label">Snapchat
+<button class="conn"><span class="logo snap">S</span><span class="label">Snapchat
                     Ads</span></button><button class="conn"><span class="logo ms">M</span><span class="label">Microsoft
-                    Ads</span></button><button class="conn"><span class="logo bc">B</span><span
-                    class="label">BigCommerce</span></button><button class="conn"><span class="logo more">＋</span><span
-                    class="label">18 more</span></button>
-              </div>
-              <div class="count"><b>✦</b>30+ connectors and counting...</div>
-            </div>
-            <aside class="config">
-              <div class="cfhead">
-                <div class="meta">∞</div>
-                <div>
-                  <h3>Facebook Ads</h3>
-                  <p>Connect your Meta Ads account in a few clicks.</p>
-                </div>
-              </div>
-              <div class="field"><label>Account</label>
-                <div class="select"><span>Alto AI – Main Account</span><span>⌄</span></div>
-              </div>
-              <div class="field"><label>Date range</label>
-                <div class="select"><span>Last 12 months</span><span>⌄</span></div>
-              </div>
-              <div class="field"><label>Data refresh</label>
-                <div class="select"><span>Every 30 min</span><span>⌄</span></div>
-              </div>
-              <div class="hist"><span>Historical data</span><span>2 years &nbsp;<i class="info">i</i></span></div>
-              <button class="connectbtn" data-demo>Connect Source</button>
-            </aside>
-          </div>
-        </section>
-      </main>
-      <main class="main2" id="page2">
-        <section class="intro2">
-          <div class="step">STEP 2</div>
-          <h1>Build <span>your visuals</span></h1>
-          <p>Create beautiful dashboards in minutes.</p>
-          <div class="callout">
-            <div class="callouticon">▦</div>
-            <div>
-              <h3>Choose from 100+ Visuals</h3>
-              <p>Use powerful charts, metrics, tables and scorecards to tell your story.</p>
-            </div>
-          </div>
-          <div class="callout" style="margin-top:46px">
-            <div class="callouticon">⇧</div>
-            <div>
-              <h3>Use connectors to load data into your Report</h3>
-              <p>Your data. Your metrics. One click away.</p>
-            </div>
-          </div>
-        </section>
-        <section class="dashbuilder">
-          <h2>Build your dashboard</h2>
-          <div class="dbtabs">
-            <div class="dbtab active">Visuals</div>
-            <div class="dbtab">Templates</div>
-            <div class="dbtab">My dashboards</div>
-          </div>
-          <div class="vsearch">⌕ &nbsp; Search visuals...</div>
-          <div class="filterchips"><span class="fchip active">All</span><span class="fchip">KPI &amp;
-              Scorecards</span><span class="fchip">Time series</span><span class="fchip">Comparison</span><span
-              class="fchip">Distribution</span><span class="fchip">Tables</span><span class="fchip">Funnels</span><span
-              class="fchip">Maps</span><span class="fchip">More⌄</span></div>
-          <div class="visualrow">
-            <div class="vcard">
-              <div class="vicon" style="font-size:17px">12.4K</div><small>Scorecard</small>
-            </div>
-            <div class="vcard">
-              <div class="vicon">⌁</div><small>Time series</small>
-            </div>
-            <div class="vcard">
-              <div class="vicon">▥</div><small>Bar chart</small>
-            </div>
-            <div class="vcard">
-              <div class="vicon" style="color:#ff5c6d">◉</div><small>Pie / Donut</small>
-            </div>
-            <div class="vcard">
-              <div class="vicon">▦</div><small>Table</small>
-            </div>
-            <div class="vcard">
-              <div class="vicon">▽</div><small>Funnel</small>
-            </div>
-            <div class="vcard">
-              <div class="vicon">◔</div><small>Gauge</small>
-            </div>
-          </div>
-          <div class="sectionhead">
-            <h3>Dashboard templates</h3><span class="viewall">View all</span>
-          </div>
-          <div class="templates">
-            <div class="template">
-              <div class="preview">
-                <div class="previewbox">
-                  <div class="spark2"></div>
-                </div>
-                <div class="previewbox">
-                  <div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i
-                      style="height:82%"></i><i style="height:63%"></i></div>
-                </div>
-              </div>
-              <div class="tmeta"><b>PPC Overview</b>
-                <p>Google Ads, Meta, TikTok</p>
-              </div>
-            </div>
-            <div class="template">
-              <div class="preview">
-                <div class="previewbox">
-                  <div class="spark2"></div>
-                </div>
-                <div class="previewbox">
-                  <div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i
-                      style="height:82%"></i><i style="height:63%"></i></div>
-                </div>
-              </div>
-              <div class="tmeta"><b>Ecommerce Overview</b>
-                <p>Shopify, GA4, Ads</p>
-              </div>
-            </div>
-            <div class="template">
-              <div class="preview">
-                <div class="previewbox">
-                  <div class="spark2"></div>
-                </div>
-                <div class="previewbox">
-                  <div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i
-                      style="height:82%"></i><i style="height:63%"></i></div>
-                </div>
-              </div>
-              <div class="tmeta"><b>Marketing Overview</b>
-                <p>All channels summary</p>
-              </div>
-            </div>
-            <div class="template">
-              <div class="preview">
-                <div class="previewbox">
-                  <div class="spark2"></div>
-                </div>
-                <div class="previewbox">
-                  <div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i
-                      style="height:82%"></i><i style="height:63%"></i></div>
-                </div>
-              </div>
-              <div class="tmeta"><b>Agency Overview</b>
-                <p>Multi-client reporting</p>
-              </div>
-            </div>
-          </div>
-          <div class="sourcesbar">
-            <h4>Your data sources</h4>
-            <div class="sourcepills">
-              <div class="sourcepill"><span class="logo meta">∞</span>Meta Ads <span
-                  style="color:#20b96b;margin-left:auto">●</span></div>
-              <div class="sourcepill"><span class="logo g">G</span>Google Ads <span
-                  style="color:#20b96b;margin-left:auto">●</span></div>
-              <div class="sourcepill"><span class="logo tt">♪</span>TikTok Ads <span
-                  style="color:#20b96b;margin-left:auto">●</span></div>
-              <div class="sourcepill"><span class="logo shop">S</span>Shopify <span
-                  style="color:#20b96b;margin-left:auto">●</span></div>
-              <div class="sourcepill add">＋ &nbsp; Add more</div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <main class="main3" id="page3">
-        <section class="intro3">
-          <div class="step">STEP 3</div>
-          <h1>Connect to <span>BigQuery</span></h1>
-          <p>Send all your data to BigQuery and truly own it.</p>
-          <div class="whycard">
-            <h3>Why BigQuery?</h3>
-            <div class="whyrow"><span class="whycheck">✓</span>Enterprise-grade security</div>
-            <div class="whyrow"><span class="whycheck">✓</span>You own all your data</div>
-            <div class="whyrow"><span class="whycheck">✓</span>Automatic data blending</div>
-            <div class="whyrow"><span class="whycheck">✓</span>Scheduled data refresh</div>
-          </div>
-          <div class="bqcallout">
-            <div class="bqhex">Q</div>
-            <h3>Use connectors to load<br>data into BigQuery</h3>
-            <p>All your data. Structured.<br>Ready for anything.</p>
-          </div>
-        </section>
-        <section class="dashbig">
-          <div class="bqtop">
-            <div class="bqtitle">
-              <div class="bqminihex">Q</div>
-              <h2>Blended Marketing Data</h2>
-              <div class="pillrow"><span class="pill">BigQuery</span><span class="pill green">● Active</span></div>
-            </div><button class="openbq">Open in BigQuery ↗</button>
-          </div>
-          <div class="sourcechips"><span class="sourcechip"><span class="logo meta"
-                style="width:22px;height:22px;font-size:21px">∞</span>Meta Ads</span><span class="sourcechip"><span
-                class="logo g" style="width:22px;height:22px">G</span>Google Ads</span><span class="sourcechip"><span
-                class="logo ga" style="width:22px;height:22px">GA</span>GA4</span><span class="sourcechip"><span
-                class="logo shop" style="width:22px;height:22px">S</span>Shopify</span><span class="sourcechip">+ 6
+                    Ads</span></button><button class="conn"><span class="logo bc">B</span><span class="label">BigCommerce</span></button><button class="conn"><span class="logo more">＋</span><span class="label">18 more</span></button>
+</div>
+<div class="count"><b>✦</b>30+ connectors and counting...</div>
+</div>
+<aside class="config">
+<div class="cfhead">
+<div class="meta">∞</div>
+<div>
+<h3>Facebook Ads</h3>
+<p>Connect your Meta Ads account in a few clicks.</p>
+</div>
+</div>
+<div class="field"><label>Account</label>
+<div class="select"><span>Alto AI – Main Account</span><span>⌄</span></div>
+</div>
+<div class="field"><label>Date range</label>
+<div class="select"><span>Last 12 months</span><span>⌄</span></div>
+</div>
+<div class="field"><label>Data refresh</label>
+<div class="select"><span>Every 30 min</span><span>⌄</span></div>
+</div>
+<div class="hist"><span>Historical data</span><span>2 years  <i class="info">i</i></span></div>
+<button class="connectbtn" data-demo="">Connect Source</button>
+</aside>
+</div>
+</section>
+</main>
+<main class="main2" id="page2">
+<section class="intro2">
+<div class="step">STEP 2</div>
+<h1>Build <span>your visuals</span></h1>
+<p>Create beautiful dashboards in minutes.</p>
+<div class="callout">
+<div class="callouticon">▦</div>
+<div>
+<h3>Choose from 100+ Visuals</h3>
+<p>Use powerful charts, metrics, tables and scorecards to tell your story.</p>
+</div>
+</div>
+<div class="callout" style="margin-top:46px">
+<div class="callouticon">⇧</div>
+<div>
+<h3>Use connectors to load data into your Report</h3>
+<p>Your data. Your metrics. One click away.</p>
+</div>
+</div>
+</section>
+<section class="dashbuilder">
+<h2>Build your dashboard</h2>
+<div class="dbtabs">
+<div class="dbtab active">Visuals</div>
+<div class="dbtab">Templates</div>
+<div class="dbtab">My dashboards</div>
+</div>
+<div class="vsearch">⌕   Search visuals...</div>
+<div class="filterchips"><span class="fchip active">All</span><span class="fchip">KPI &amp;
+              Scorecards</span><span class="fchip">Time series</span><span class="fchip">Comparison</span><span class="fchip">Distribution</span><span class="fchip">Tables</span><span class="fchip">Funnels</span><span class="fchip">Maps</span><span class="fchip">More⌄</span></div>
+<div class="visualrow">
+<div class="vcard">
+<div class="vicon" style="font-size:17px">12.4K</div><small>Scorecard</small>
+</div>
+<div class="vcard">
+<div class="vicon">⌁</div><small>Time series</small>
+</div>
+<div class="vcard">
+<div class="vicon">▥</div><small>Bar chart</small>
+</div>
+<div class="vcard">
+<div class="vicon" style="color:#ff5c6d">◉</div><small>Pie / Donut</small>
+</div>
+<div class="vcard">
+<div class="vicon">▦</div><small>Table</small>
+</div>
+<div class="vcard">
+<div class="vicon">▽</div><small>Funnel</small>
+</div>
+<div class="vcard">
+<div class="vicon">◔</div><small>Gauge</small>
+</div>
+</div>
+<div class="sectionhead">
+<h3>Dashboard templates</h3><span class="viewall">View all</span>
+</div>
+<div class="templates">
+<div class="template">
+<div class="preview">
+<div class="previewbox">
+<div class="spark2"></div>
+</div>
+<div class="previewbox">
+<div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:82%"></i><i style="height:63%"></i></div>
+</div>
+</div>
+<div class="tmeta"><b>PPC Overview</b>
+<p>Google Ads, Meta, TikTok</p>
+</div>
+</div>
+<div class="template">
+<div class="preview">
+<div class="previewbox">
+<div class="spark2"></div>
+</div>
+<div class="previewbox">
+<div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:82%"></i><i style="height:63%"></i></div>
+</div>
+</div>
+<div class="tmeta"><b>Ecommerce Overview</b>
+<p>Shopify, GA4, Ads</p>
+</div>
+</div>
+<div class="template">
+<div class="preview">
+<div class="previewbox">
+<div class="spark2"></div>
+</div>
+<div class="previewbox">
+<div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:82%"></i><i style="height:63%"></i></div>
+</div>
+</div>
+<div class="tmeta"><b>Marketing Overview</b>
+<p>All channels summary</p>
+</div>
+</div>
+<div class="template">
+<div class="preview">
+<div class="previewbox">
+<div class="spark2"></div>
+</div>
+<div class="previewbox">
+<div class="barset"><i style="height:42%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:82%"></i><i style="height:63%"></i></div>
+</div>
+</div>
+<div class="tmeta"><b>Agency Overview</b>
+<p>Multi-client reporting</p>
+</div>
+</div>
+</div>
+<div class="sourcesbar">
+<h4>Your data sources</h4>
+<div class="sourcepills">
+<div class="sourcepill"><span class="logo meta">∞</span>Meta Ads <span style="color:#20b96b;margin-left:auto">●</span></div>
+<div class="sourcepill"><span class="logo g">G</span>Google Ads <span style="color:#20b96b;margin-left:auto">●</span></div>
+<div class="sourcepill"><span class="logo tt">♪</span>TikTok Ads <span style="color:#20b96b;margin-left:auto">●</span></div>
+<div class="sourcepill"><span class="logo shop">S</span>Shopify <span style="color:#20b96b;margin-left:auto">●</span></div>
+<div class="sourcepill add">＋   Add more</div>
+</div>
+</div>
+</section>
+</main>
+<main class="main3" id="page3">
+<section class="intro3">
+<div class="step">STEP 3</div>
+<h1>Connect to <span>BigQuery</span></h1>
+<p>Send all your data to BigQuery and truly own it.</p>
+<div class="whycard">
+<h3>Why BigQuery?</h3>
+<div class="whyrow"><span class="whycheck">✓</span>Enterprise-grade security</div>
+<div class="whyrow"><span class="whycheck">✓</span>You own all your data</div>
+<div class="whyrow"><span class="whycheck">✓</span>Automatic data blending</div>
+<div class="whyrow"><span class="whycheck">✓</span>Scheduled data refresh</div>
+</div>
+<div class="bqcallout">
+<div class="bqhex">Q</div>
+<h3>Use connectors to load<br/>data into BigQuery</h3>
+<p>All your data. Structured.<br/>Ready for anything.</p>
+</div>
+</section>
+<section class="dashbig">
+<div class="bqtop">
+<div class="bqtitle">
+<div class="bqminihex">Q</div>
+<h2>Blended Marketing Data</h2>
+<div class="pillrow"><span class="pill">BigQuery</span><span class="pill green">● Active</span></div>
+</div><button class="openbq">Open in BigQuery ↗</button>
+</div>
+<div class="sourcechips"><span class="sourcechip"><span class="logo meta" style="width:22px;height:22px;font-size:21px">∞</span>Meta Ads</span><span class="sourcechip"><span class="logo g" style="width:22px;height:22px">G</span>Google Ads</span><span class="sourcechip"><span class="logo ga" style="width:22px;height:22px">GA</span>GA4</span><span class="sourcechip"><span class="logo shop" style="width:22px;height:22px">S</span>Shopify</span><span class="sourcechip">+ 6
               more</span></div>
-          <div class="previewtable">
-            <div class="ptrow head">
-              <div>Date</div>
-              <div>Blended Ad Spend</div>
-              <div>GA4 Conversions</div>
-              <div>Purchase Value</div>
-              <div>ROAS</div>
-            </div>
-            <div class="ptrow">
-              <div>Feb 8, 2026</div>
-              <div>9,889.92</div>
-              <div>4</div>
-              <div>2,472.48</div>
-              <div>2.47</div>
-            </div>
-            <div class="ptrow">
-              <div>Feb 9, 2026</div>
-              <div>1,267.47</div>
-              <div>2</div>
-              <div>633.74</div>
-              <div>2.01</div>
-            </div>
-            <div class="ptrow">
-              <div>Feb 10, 2026</div>
-              <div>2,156.78</div>
-              <div>6</div>
-              <div>1,811.32</div>
-              <div>1.83</div>
-            </div>
-            <div class="tablefoot"><span>Showing 3 rows (preview limited to 100 rows)</span><span>Last updated: Just now
-                &nbsp; ↻</span></div>
-          </div>
-          <h3 class="settingshead">Data settings</h3>
-          <div class="settingsbox">
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">◉</span><span class="sname">Data
+<div class="previewtable">
+<div class="ptrow head">
+<div>Date</div>
+<div>Blended Ad Spend</div>
+<div>GA4 Conversions</div>
+<div>Purchase Value</div>
+<div>ROAS</div>
+</div>
+<div class="ptrow">
+<div>Feb 8, 2026</div>
+<div>9,889.92</div>
+<div>4</div>
+<div>2,472.48</div>
+<div>2.47</div>
+</div>
+<div class="ptrow">
+<div>Feb 9, 2026</div>
+<div>1,267.47</div>
+<div>2</div>
+<div>633.74</div>
+<div>2.01</div>
+</div>
+<div class="ptrow">
+<div>Feb 10, 2026</div>
+<div>2,156.78</div>
+<div>6</div>
+<div>1,811.32</div>
+<div>1.83</div>
+</div>
+<div class="tablefoot"><span>Showing 3 rows (preview limited to 100 rows)</span><span>Last updated: Just now
+                  ↻</span></div>
+</div>
+<h3 class="settingshead">Data settings</h3>
+<div class="settingsbox">
+<div class="settingrow"><span class="sdot"></span><span class="sicon">◉</span><span class="sname">Data
                 sources</span><span class="svalue">10 connected sources</span><span>⌄</span></div>
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">#</span><span
-                class="sname">Metrics</span><span class="svalue">Blended Ad Spend, GA4 Conversions, Purchase Value,
+<div class="settingrow"><span class="sdot"></span><span class="sicon">#</span><span class="sname">Metrics</span><span class="svalue">Blended Ad Spend, GA4 Conversions, Purchase Value,
                 ROAS</span><span>⌄</span></div>
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">▦</span><span
-                class="sname">Dimensions</span><span class="svalue">Date, Campaign, Channel, Country,
+<div class="settingrow"><span class="sdot"></span><span class="sicon">▦</span><span class="sname">Dimensions</span><span class="svalue">Date, Campaign, Channel, Country,
                 Device</span><span>⌄</span></div>
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">▣</span><span class="sname">Date
+<div class="settingrow"><span class="sdot"></span><span class="sicon">▣</span><span class="sname">Date
                 range</span><span class="svalue">Last 14 Days (28/01/2026 - 10/02/2026)</span><span>⌄</span></div>
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">▽</span><span
-                class="sname">Filter</span><span class="svalue">Channel includes Paid Search, Paid
+<div class="settingrow"><span class="sdot"></span><span class="sicon">▽</span><span class="sname">Filter</span><span class="svalue">Channel includes Paid Search, Paid
                 Social</span><span>⌄</span></div>
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">↕</span><span
-                class="sname">Sort</span><span class="svalue">Date (Asc)</span><span>⌄</span></div>
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">◷</span><span
-                class="sname">Schedule</span><span class="svalue">Every day at 08:00 AM (GMT-5)</span><span>⌄</span>
-            </div>
-            <div class="settingrow"><span class="sdot"></span><span class="sicon">⚙</span><span
-                class="sname">Settings</span><span class="svalue">Write disposition: Write append</span><span>⌄</span>
-            </div>
-          </div>
-          <div class="privacybar">⬡ &nbsp; Your data is stored in your BigQuery project and never shared with third
+<div class="settingrow"><span class="sdot"></span><span class="sicon">↕</span><span class="sname">Sort</span><span class="svalue">Date (Asc)</span><span>⌄</span></div>
+<div class="settingrow"><span class="sdot"></span><span class="sicon">◷</span><span class="sname">Schedule</span><span class="svalue">Every day at 08:00 AM (GMT-5)</span><span>⌄</span>
+</div>
+<div class="settingrow"><span class="sdot"></span><span class="sicon">⚙</span><span class="sname">Settings</span><span class="svalue">Write disposition: Write append</span><span>⌄</span>
+</div>
+</div>
+<div class="privacybar">⬡   Your data is stored in your BigQuery project and never shared with third
             parties.</div>
-        </section>
-      </main>
-
-
-      <main class="main4" id="page4">
-        <section class="intro4">
-          <div class="step">STEP 4</div>
-          <h1>Speak to <span>Claude</span></h1>
-          <p>Use the PorterMetrics plugin to connect Claude to your BigQuery data.</p>
-          <div class="askcard">
-            <h3>You can ask Claude to:</h3>
-            <div class="askrow">
-              <div class="askicon">▣</div>
-              <div><b>Build custom reports for you</b>
-                <p>Claude will create charts, tables, and reports—tailored to your needs.</p>
-              </div>
-            </div>
-            <div class="askrow">
-              <div class="askicon">⌁</div>
-              <div><b>Analyze your data</b>
-                <p>Get instant insights, summaries, and trend analysis.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="claude-workspace">
-          <div class="perfpanel">
-            <div class="perfhead">
-              <div class="perftitle"><span class="dbicon">▰</span>Marketing Performance Overview <span class="pill"
-                  style="margin-left:2px;height:23px;padding:0 9px;font-size:8px;background:#eef6ff;color:#0871f9">BigQuery</span>
-              </div>
-              <div class="refresh">↻ &nbsp; Refresh</div>
-            </div>
-            <div class="kpirow4">
-              <div class="kpi4"><small>Total Revenue</small><strong>$1,248,320</strong><em>↑ 12.4% vs last week</em>
-              </div>
-              <div class="kpi4"><small>Orders</small><strong>2,845</strong><em>↑ 8.6% vs last week</em></div>
-              <div class="kpi4"><small>Avg. Order Value</small><strong>$439.12</strong><em>↑ 3.7% vs last week</em>
-              </div>
-              <div class="kpi4"><small>New Customers</small><strong>1,234</strong><em>↑ 9.2% vs last week</em></div>
-            </div>
-            <div class="chartrow4">
-              <div class="chartbox4">
-                <h4>Revenue Over Time</h4>
-                <div class="axislabels4"><span>$150K</span><span>$100K</span><span>$50K</span><span>$0</span></div>
-                <div class="linearea4"><svg viewBox="0 0 420 170" preserveAspectRatio="none">
-                    <polyline
-                      points="0,126 24,80 50,74 72,112 98,92 120,106 148,76 172,97 202,55 224,26 250,72 278,76 306,58 330,18 354,68 378,44 402,62 420,52"
-                      fill="none" stroke="#0871f9" stroke-width="3" />
-                    <g fill="#fff" stroke="#0871f9" stroke-width="2">
-                      <circle cx="0" cy="126" r="3" />
-                      <circle cx="50" cy="74" r="3" />
-                      <circle cx="98" cy="92" r="3" />
-                      <circle cx="148" cy="76" r="3" />
-                      <circle cx="202" cy="55" r="3" />
-                      <circle cx="224" cy="26" r="3" />
-                      <circle cx="306" cy="58" r="3" />
-                      <circle cx="330" cy="18" r="3" />
-                      <circle cx="402" cy="62" r="3" />
-                    </g>
-                  </svg></div>
-                <div class="days4">
-                  <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sun</span>
-                </div>
-                <div class="tip4">Fri<br><b>$186,420</b></div>
-              </div>
-              <div class="chartbox4">
-                <h4>Revenue by Channel</h4>
-                <div class="donut4"></div>
-                <div class="legend4">
-                  <div><i style="background:#347df1"></i>Paid Search &nbsp;36.8%</div>
-                  <div><i style="background:#29c3ad"></i>Direct &nbsp;24.4%</div>
-                  <div><i style="background:#65cdb9"></i>Email &nbsp;16.8%</div>
-                  <div><i style="background:#f091c4"></i>Social &nbsp;12.7%</div>
-                  <div><i style="background:#ffbd66"></i>Referral &nbsp;9.3%</div>
-                </div>
-              </div>
-            </div>
-            <div class="products4">
-              <div class="prodhead4">Top Products by Revenue</div>
-              <div class="prodrow4 head">
-                <div>Product</div>
-                <div>Revenue</div>
-                <div>Orders</div>
-                <div>AOV</div>
-              </div>
-              <div class="prodrow4">
-                <div>Eco Bottle</div>
-                <div>$245,860</div>
-                <div>605</div>
-                <div>$406.38</div>
-              </div>
-              <div class="prodrow4">
-                <div>Travel Mug</div>
-                <div>$189,420</div>
-                <div>482</div>
-                <div>$392.36</div>
-              </div>
-              <div class="prodrow4">
-                <div>Hoodie</div>
-                <div>$158,750</div>
-                <div>375</div>
-                <div>$423.33</div>
-              </div>
-              <div class="prodrow4">
-                <div>Laptop Sleeve</div>
-                <div>$132,920</div>
-                <div>320</div>
-                <div>$415.38</div>
-              </div>
-              <div class="prodrow4">
-                <div>Tote Bag</div>
-                <div>$98,330</div>
-                <div>268</div>
-                <div>$366.17</div>
-              </div>
-            </div>
-          </div>
-          <div class="chatpanel">
-            <div class="chathead4">
-              <div class="claudetitle4"><span class="claudelogo4"></span>
-                <div><b>Claude</b><small>PorterMetrics Plugin</small></div>
-              </div><button class="newchat4">▣ &nbsp; New chat</button>
-            </div>
-            <div class="chatbody4">
-              <h3>Hi! I'm Claude, connected to your BigQuery data</h3>
-              <p>How can I help you today?</p>
-              <div class="prompts4">
-                <div class="prompt4">⌁ &nbsp; Analyze my revenue trends</div>
-                <div class="prompt4">▣ &nbsp; Build a report of top products by revenue</div>
-                <div class="prompt4">▥ &nbsp; Compare channel performance</div>
-                <div class="prompt4">⌁ &nbsp; Summarize last week's performance</div>
-              </div>
-              <div class="userbubble4">Analyze my revenue trends for last week</div>
-              <div class="answer4">
-                <div class="answerhead"><span class="mini-claude4"></span><span>Here's an analysis of your revenue
+</section>
+</main>
+<main class="main4" id="page4">
+<section class="intro4">
+<div class="step">STEP 4</div>
+<h1>Speak to <span>Claude</span></h1>
+<p>Use the PorterMetrics plugin to connect Claude to your BigQuery data.</p>
+<div class="askcard">
+<h3>You can ask Claude to:</h3>
+<div class="askrow">
+<div class="askicon">▣</div>
+<div><b>Build custom reports for you</b>
+<p>Claude will create charts, tables, and reports—tailored to your needs.</p>
+</div>
+</div>
+<div class="askrow">
+<div class="askicon">⌁</div>
+<div><b>Analyze your data</b>
+<p>Get instant insights, summaries, and trend analysis.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="claude-workspace">
+<div class="perfpanel">
+<div class="perfhead">
+<div class="perftitle"><span class="dbicon">▰</span>Marketing Performance Overview <span class="pill" style="margin-left:2px;height:23px;padding:0 9px;font-size:8px;background:#eef6ff;color:#0871f9">BigQuery</span>
+</div>
+<div class="refresh">↻   Refresh</div>
+</div>
+<div class="kpirow4">
+<div class="kpi4"><small>Total Revenue</small><strong>$1,248,320</strong><em>↑ 12.4% vs last week</em>
+</div>
+<div class="kpi4"><small>Orders</small><strong>2,845</strong><em>↑ 8.6% vs last week</em></div>
+<div class="kpi4"><small>Avg. Order Value</small><strong>$439.12</strong><em>↑ 3.7% vs last week</em>
+</div>
+<div class="kpi4"><small>New Customers</small><strong>1,234</strong><em>↑ 9.2% vs last week</em></div>
+</div>
+<div class="chartrow4">
+<div class="chartbox4">
+<h4>Revenue Over Time</h4>
+<div class="axislabels4"><span>$150K</span><span>$100K</span><span>$50K</span><span>$0</span></div>
+<div class="linearea4"><svg preserveaspectratio="none" viewbox="0 0 420 170">
+<polyline fill="none" points="0,126 24,80 50,74 72,112 98,92 120,106 148,76 172,97 202,55 224,26 250,72 278,76 306,58 330,18 354,68 378,44 402,62 420,52" stroke="#0871f9" stroke-width="3"></polyline>
+<g fill="#fff" stroke="#0871f9" stroke-width="2">
+<circle cx="0" cy="126" r="3"></circle>
+<circle cx="50" cy="74" r="3"></circle>
+<circle cx="98" cy="92" r="3"></circle>
+<circle cx="148" cy="76" r="3"></circle>
+<circle cx="202" cy="55" r="3"></circle>
+<circle cx="224" cy="26" r="3"></circle>
+<circle cx="306" cy="58" r="3"></circle>
+<circle cx="330" cy="18" r="3"></circle>
+<circle cx="402" cy="62" r="3"></circle>
+</g>
+</svg></div>
+<div class="days4">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sun</span>
+</div>
+<div class="tip4">Fri<br/><b>$186,420</b></div>
+</div>
+<div class="chartbox4">
+<h4>Revenue by Channel</h4>
+<div class="donut4"></div>
+<div class="legend4">
+<div><i style="background:#347df1"></i>Paid Search  36.8%</div>
+<div><i style="background:#29c3ad"></i>Direct  24.4%</div>
+<div><i style="background:#65cdb9"></i>Email  16.8%</div>
+<div><i style="background:#f091c4"></i>Social  12.7%</div>
+<div><i style="background:#ffbd66"></i>Referral  9.3%</div>
+</div>
+</div>
+</div>
+<div class="products4">
+<div class="prodhead4">Top Products by Revenue</div>
+<div class="prodrow4 head">
+<div>Product</div>
+<div>Revenue</div>
+<div>Orders</div>
+<div>AOV</div>
+</div>
+<div class="prodrow4">
+<div>Eco Bottle</div>
+<div>$245,860</div>
+<div>605</div>
+<div>$406.38</div>
+</div>
+<div class="prodrow4">
+<div>Travel Mug</div>
+<div>$189,420</div>
+<div>482</div>
+<div>$392.36</div>
+</div>
+<div class="prodrow4">
+<div>Hoodie</div>
+<div>$158,750</div>
+<div>375</div>
+<div>$423.33</div>
+</div>
+<div class="prodrow4">
+<div>Laptop Sleeve</div>
+<div>$132,920</div>
+<div>320</div>
+<div>$415.38</div>
+</div>
+<div class="prodrow4">
+<div>Tote Bag</div>
+<div>$98,330</div>
+<div>268</div>
+<div>$366.17</div>
+</div>
+</div>
+</div>
+<div class="chatpanel">
+<div class="chathead4">
+<div class="claudetitle4"><span class="claudelogo4"></span>
+<div><b>Claude</b><small>PorterMetrics Plugin</small></div>
+</div><button class="newchat4">▣   New chat</button>
+</div>
+<div class="chatbody4">
+<h3>Hi! I'm Claude, connected to your BigQuery data</h3>
+<p>How can I help you today?</p>
+<div class="prompts4">
+<div class="prompt4">⌁   Analyze my revenue trends</div>
+<div class="prompt4">▣   Build a report of top products by revenue</div>
+<div class="prompt4">▥   Compare channel performance</div>
+<div class="prompt4">⌁   Summarize last week's performance</div>
+</div>
+<div class="userbubble4">Analyze my revenue trends for last week</div>
+<div class="answer4">
+<div class="answerhead"><span class="mini-claude4"></span><span>Here's an analysis of your revenue
                     trends for last week:</span></div>
-                <ul>
-                  <li>Revenue peaked on Friday at $186,420 (+23% vs weekly avg)</li>
-                  <li>Strong growth midweek, dip on Sunday</li>
-                  <li>Overall trend is positive: +12.4% vs last week</li>
-                </ul>
-                <div class="bargraph4">
-                  <div class="bars4"><i style="height:45%"></i><i style="height:61%"></i><i style="height:59%"></i><i
-                      style="height:76%"></i><i style="height:92%"></i><i style="height:85%"></i><i
-                      style="height:67%"></i></div>
-                </div>
-              </div>
-            </div>
-            <div class="chatinput4">
-              <div class="chatbox4">Ask Claude anything about your data... <span class="send4">➤</span></div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-
-      <main class="main5" id="page5">
-        <section class="intro5">
-          <div class="step">STEP 5</div>
-          <h1>Use our tested models to make <span>predictions</span> on your data</h1>
-          <p>Actionable predictions. Clear insights. Built for growth.</p>
-          <div class="valuecard5">
-            <div class="vrow5">
-              <div class="vicon5">⌁</div>
-              <div><b>Predictions that drive results</b>
-                <p>Analyze your customers and ICP, learn what leads sales and churn, predict next month sales...</p>
-              </div>
-            </div>
-            <div class="vrow5">
-              <div class="vicon5">◉</div>
-              <div><b>Full-on transparency</b>
-                <p>See what drives the model decisions with XAI.</p>
-              </div>
-            </div>
-            <div class="vrow5">
-              <div class="vicon5">✓</div>
-              <div><b>Continuous monitoring</b>
-                <p>We continuously monitor model performance to ensure the highest possible quality.</p>
-              </div>
-            </div>
-            <div class="vrow5">
-              <div class="vicon5">✧</div>
-              <div><b>More models coming...</b>
-                <p>Uplift modeling and more.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="modelshell5">
-          <div class="mhead5">
-            <div>
-              <h2>✧ &nbsp; Our AI Models</h2>
-              <p>Proprietary models built for your business.</p>
-            </div>
-            <div class="monitorbadge5">✓ &nbsp; Continuously monitored</div>
-          </div>
-          <div class="modelgrid5">
-            <div class="modelcard5">
-              <div class="mi5" style="background:#f0eaff;color:#7652ff">◉</div>
-              <h3>Churn<br>Prediction</h3>
-              <p>Identify customers at risk of churn and take action before it’s too late.</p>
-              <div class="active5">● Active</div>
-            </div>
-            <div class="modelcard5">
-              <div class="mi5" style="background:#eaf4ff;color:#0871f9">◎</div>
-              <h3>Customer<br>Segmentation</h3>
-              <p>Discover high-value segments and understand your ICP.</p>
-              <div class="active5">● Active</div>
-            </div>
-            <div class="modelcard5">
-              <div class="mi5" style="background:#eafafa;color:#1baebd">🛒</div>
-              <h3>Purchase<br>Prediction</h3>
-              <p>Predict the next purchase and improve conversion with the right timing.</p>
-              <div class="active5">● Active</div>
-            </div>
-            <div class="modelcard5">
-              <div class="mi5" style="background:#fff3e7;color:#ff8a33">⌁</div>
-              <h3>Sales<br>Forecasting</h3>
-              <p>Forecast future sales with accuracy and plan ahead with confidence.</p>
-              <div class="active5">● Active</div>
-            </div>
-            <div class="modelcard5 more5">
-              <div class="plus5">+</div>
-              <h3>More models<br>coming soon</h3>
-              <p>Uplift modeling<br>and more.</p>
-            </div>
-          </div>
-          <div class="sectiontitle5">
-            <div>
-              <h3>✧ &nbsp; Model Performance Monitoring</h3>
-              <p>We continuously monitor our models to ensure the highest possible quality.</p>
-            </div>
-            <div class="period5">▣ &nbsp; Last 30 days &nbsp;⌄</div>
-          </div>
-          <div class="metricgrid5">
-            <div class="metric5"><small>Prediction Accuracy</small><strong>92.4%</strong><em>↑ 2.6% vs last month</em>
-              <div class="spark5"><svg viewBox="0 0 120 40" preserveAspectRatio="none">
-                  <polyline points="0,31 10,25 20,27 30,21 40,24 50,17 60,19 70,12 80,16 90,8 102,11 120,6" fill="none"
-                    stroke="#7a52f4" stroke-width="2" />
-                </svg></div>
-            </div>
-            <div class="metric5"><small>Precision</small><strong>90.1%</strong><em>↑ 1.8% vs last month</em>
-              <div class="spark5"><svg viewBox="0 0 120 40" preserveAspectRatio="none">
-                  <polyline points="0,30 12,24 23,27 35,21 45,24 56,18 67,21 78,14 90,20 102,11 112,14 120,9"
-                    fill="none" stroke="#0871f9" stroke-width="2" />
-                </svg></div>
-            </div>
-            <div class="metric5"><small>Recall</small><strong>89.7%</strong><em>↑ 3.1% vs last month</em>
-              <div class="spark5"><svg viewBox="0 0 120 40" preserveAspectRatio="none">
-                  <polyline points="0,28 10,22 20,25 31,18 43,22 54,15 65,20 76,12 87,18 98,10 110,14 120,9" fill="none"
-                    stroke="#1baebd" stroke-width="2" />
-                </svg></div>
-            </div>
-            <div class="metric5"><small>F1 Score</small><strong>90.2%</strong><em>↑ 2.2% vs last month</em>
-              <div class="spark5"><svg viewBox="0 0 120 40" preserveAspectRatio="none">
-                  <polyline points="0,31 10,26 20,29 31,20 42,24 55,17 66,22 77,12 88,18 98,10 110,15 120,8" fill="none"
-                    stroke="#ff8a33" stroke-width="2" />
-                </svg></div>
-            </div>
-            <div class="metric5"><small>Data Drift</small><strong style="font-size:15px">● Low</strong><em>● Stable</em>
-              <div class="driftbars5"><i style="height:28%"></i><i style="height:38%"></i><i style="height:48%"></i><i
-                  style="height:65%"></i><i style="height:35%"></i><i style="height:53%"></i><i
-                  style="height:29%"></i><i style="height:42%"></i><i style="height:57%"></i><i
-                  style="height:33%"></i><i style="height:49%"></i><i style="height:71%"></i><i
-                  style="height:36%"></i><i style="height:55%"></i><i style="height:45%"></i></div>
-            </div>
-          </div>
-          <div class="sectiontitle5">
-            <div>
-              <h3>✧ &nbsp; Model Explainability (XAI)</h3>
-              <p>Understand what drives our model decisions.</p>
-            </div>
-            <div class="period5">Churn Prediction &nbsp;⌄</div>
-          </div>
-          <div class="xaigrid5">
-            <div class="xaicard5">
-              <h4>Feature Impact (SHAP Values)</h4>
-              <div class="features5">
-                <div class="fname5">Tenure (months)</div>
-                <div class="swarm5"></div>
-                <div class="fname5">Support Tickets</div>
-                <div class="swarm5"></div>
-                <div class="fname5">Payment Failures</div>
-                <div class="swarm5"></div>
-                <div class="fname5">Engagement Score</div>
-                <div class="swarm5"></div>
-                <div class="fname5">Last Login (days)</div>
-                <div class="swarm5"></div>
-                <div class="fname5">Contract Type</div>
-                <div class="swarm5"></div>
-                <div class="fname5">Usage Frequency</div>
-                <div class="swarm5"></div>
-                <div class="fname5">Device Changes</div>
-                <div class="swarm5"></div>
-              </div>
-              <div class="xaxis5">Impact on model output &nbsp; (Lower churn risk ← → Higher churn risk)</div>
-            </div>
-            <div class="xaicard5 meaning5">
-              <h4>What this means</h4>
-              <p><b style="color:#ff2764">↑</b> &nbsp; Tenure and engagement are the strongest drivers of churn risk.
+<ul>
+<li>Revenue peaked on Friday at $186,420 (+23% vs weekly avg)</li>
+<li>Strong growth midweek, dip on Sunday</li>
+<li>Overall trend is positive: +12.4% vs last week</li>
+</ul>
+<div class="bargraph4">
+<div class="bars4"><i style="height:45%"></i><i style="height:61%"></i><i style="height:59%"></i><i style="height:76%"></i><i style="height:92%"></i><i style="height:85%"></i><i style="height:67%"></i></div>
+</div>
+</div>
+</div>
+<div class="chatinput4">
+<div class="chatbox4">Ask Claude anything about your data... <span class="send4">➤</span></div>
+</div>
+</div>
+</section>
+</main>
+<main class="ai-page" id="page5">
+<section class="ai-intro">
+<div class="step">STEP 5</div>
+<h1>Use AI to <span>predict</span></h1>
+<p>Actionable predictions.<br/>Built for ecommerce growth.</p>
+<div class="ai-benefits">
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M3 17l5-5 4 3 7-8"></path><path d="M15 7h4v4"></path></svg></div><div><b>Predict future sales</b><p>Forecast revenue and demand before it happens.</p></div></div>
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="8" r="3"></circle><path d="M3 20v-2a5 5 0 0 1 10 0v2M12 20v-2a5 5 0 0 1 9 0v2"></path></svg></div><div><b>Understand your customers</b><p>Automatically segment customers and identify your ICP.</p></div></div>
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div><b>Reduce customer churn</b><p>Detect at-risk customers before they leave.</p></div></div>
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M3 4h2l2 11h10l2-7H7"></path><circle cx="9" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg></div><div><b>Predict future purchases</b><p>Know which customers are most likely to buy again.</p></div></div>
+</div>
+<div class="ai-note"><div class="ai-icon"><svg viewbox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3"></ellipse><path d="M5 5v7c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 12v7c0 1.7 3.1 3 7 3s7-1.3 7-3v-7"></path></svg></div>Predictions built from your marketing, ecommerce and CRM data.</div>
+</section>
+<section class="ai-shell">
+<div class="ai-head"><div><h2>Our AI Models</h2><p>Production-ready models trained on your business data.</p></div></div>
+<div class="modelcards-new">
+<article class="modelcard-new"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"></path><path d="M9 12l2 2 4-4"></path></svg></div><h3>Churn<br/>Prediction</h3><p>Identify customers at risk before they stop buying.</p><em>● Active</em></article>
+<article class="modelcard-new"><div class="ai-icon"><svg viewbox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><circle cx="17" cy="8" r="3"></circle><path d="M3 20v-2a5 5 0 0 1 10 0v2M12 20v-2a5 5 0 0 1 9 0v2"></path></svg></div><h3>Customer<br/>Segmentation</h3><p>Discover your highest-value customer groups.</p><em>● Active</em></article>
+<article class="modelcard-new"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M3 17l5-5 4 3 7-8"></path><path d="M15 7h4v4"></path></svg></div><h3>Sales<br/>Forecasting</h3><p>Forecast future revenue with confidence.</p><em>● Active</em></article>
+<article class="modelcard-new"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M3 4h2l2 11h10l2-7H7"></path><circle cx="9" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg></div><h3>Purchase<br/>Prediction</h3><p>Identify customers most likely to buy again.</p><em>● Active</em></article>
+<article class="modelcard-new more"><div class="model-plus">+</div><h3>More models<br/>coming</h3><em>• Uplift Modeling<br/>• Marketing Mix Modeling<br/>• Inventory Optimization</em></article>
+</div>
+<div class="forecast-wrap">
+<div class="forecast-title"><h3>⌁   Revenue Forecast</h3><div class="ai-select">▣   Next 12 months  ⌄</div></div>
+<div class="forecast-grid">
+<div class="forecast-chart"><div class="forecast-axis"><span>$600K</span><span>$500K</span><span>$400K</span><span>$300K</span><span>$200K</span><span>$100K</span><span>$0</span></div><svg preserveaspectratio="none" viewbox="0 0 700 220"><path d="M0 174 L35 183 L70 169 L105 180 L140 160 L175 171 L210 145 L245 128 L280 138 L315 120 L350 129 L385 107 L420 115 L455 89 L490 99 L525 76 L560 86 L595 58 L630 70 L665 37 L700 46" fill="none" stroke="#0871f9" stroke-width="3"></path><path d="M385 107 L420 115 L455 89 L490 99 L525 76 L560 86 L595 58 L630 70 L665 37 L700 46 L700 93 L665 79 L630 104 L595 94 L560 121 L525 110 L490 131 L455 121 L420 143 L385 132Z" fill="#7652ff18"></path><path d="M385 107 L420 115 L455 89 L490 99 L525 76 L560 86 L595 58 L630 70 L665 37 L700 46" fill="none" stroke="#8f72f7" stroke-width="3"></path></svg><div class="forecast-months"><span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span><span>Jan</span><span>Mar</span></div><div class="forecast-labels"><span>Historical</span><span>Forecast</span></div></div>
+<aside class="forecast-stats"><div class="forecast-stat"><small>Predicted revenue</small><strong>$582,000</strong><em>+14% vs last 12 months</em></div><div class="forecast-stat"><small>Confidence</small><strong>92%</strong><div class="confbar"><i></i></div></div><div class="forecast-stat"><small>Expected growth</small><strong>+14%</strong><small>Next 12 months</small></div></aside>
+</div>
+</div>
+</section>
+</main>
+<main class="ai-page" id="page6">
+<section class="ai-intro">
+<div class="step">STEP 6</div><h1>Monitor <span>your models</span></h1><p>We continuously monitor model performance to ensure accuracy, stability and reliability over time.</p>
+<div class="ai-benefits">
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M3 17l5-5 4 3 7-8"></path><path d="M15 7h4v4"></path></svg></div><div><b>Track performance 24/7</b><p>We monitor key metrics and data quality around the clock.</p></div></div>
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"></path><path d="M10 21h4"></path></svg></div><div><b>Detect issues early</b><p>Get alerted the moment something changes.</p></div></div>
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M3 17l5-5 4 3 7-8"></path></svg></div><div><b>Ensure data stability</b><p>We watch for drift and data-quality issues continuously.</p></div></div>
+<div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div><b>Built for reliability</b><p>Our models stay accurate as your business evolves.</p></div></div>
+</div><div class="ai-note"><div class="ai-icon"><svg viewbox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3"></ellipse><path d="M5 5v7c0 1.7 3.1 3 7 3s7-1.3 7-3V5"></path></svg></div>Reliable predictions start with continuous monitoring and data quality.</div>
+</section>
+<section class="ai-shell">
+<div class="ai-head"><div><h2>⌁   Model Performance Overview</h2><p>All models are performing within expected thresholds.</p></div><div class="ai-select">▣   Last 30 days  ⌄</div></div>
+<div class="metriccards-new">
+<article class="metriccard-new"><small>Prediction Accuracy</small><strong>92.4%</strong><em>↑ 2.6% vs last 30 days</em><div class="mini-spark"><svg viewbox="0 0 160 55"><polyline fill="none" points="0,43 14,34 28,37 42,27 56,31 70,19 84,25 98,14 112,21 126,8 142,16 160,10" stroke="#7652ff" stroke-width="2.5"></polyline></svg></div></article>
+<article class="metriccard-new"><small>Precision</small><strong>90.1%</strong><em>↑ 1.8% vs last 30 days</em><div class="mini-spark"><svg viewbox="0 0 160 55"><polyline fill="none" points="0,45 14,37 28,39 42,29 56,35 70,23 84,27 98,17 112,29 126,9 142,18 160,12" stroke="#0871f9" stroke-width="2.5"></polyline></svg></div></article>
+<article class="metriccard-new"><small>Recall</small><strong>89.7%</strong><em>↑ 3.1% vs last 30 days</em><div class="mini-spark"><svg viewbox="0 0 160 55"><polyline fill="none" points="0,44 14,33 28,41 42,27 56,34 70,21 84,31 98,16 112,28 126,12 142,21 160,15" stroke="#1baebd" stroke-width="2.5"></polyline></svg></div></article>
+<article class="metriccard-new"><small>F1 Score</small><strong>90.2%</strong><em>↑ 2.2% vs last 30 days</em><div class="mini-spark"><svg viewbox="0 0 160 55"><polyline fill="none" points="0,45 14,39 28,42 42,28 56,36 70,22 84,29 98,14 112,24 126,7 142,18 160,11" stroke="#ff8a33" stroke-width="2.5"></polyline></svg></div></article>
+<article class="metriccard-new"><small>Data Drift</small><strong>● Low</strong><em>● Stable</em><div class="mini-spark"><svg viewbox="0 0 160 55"><rect fill="#7652ff" height="14" rx="1" width="6" x="0" y="41"></rect><rect fill="#7652ff" height="22" rx="1" width="6" x="10" y="33"></rect><rect fill="#7652ff" height="33" rx="1" width="6" x="20" y="22"></rect><rect fill="#7652ff" height="45" rx="1" width="6" x="30" y="10"></rect><rect fill="#7652ff" height="28" rx="1" width="6" x="40" y="27"></rect><rect fill="#7652ff" height="18" rx="1" width="6" x="50" y="37"></rect><rect fill="#7652ff" height="12" rx="1" width="6" x="60" y="43"></rect><rect fill="#7652ff" height="20" rx="1" width="6" x="70" y="35"></rect><rect fill="#7652ff" height="29" rx="1" width="6" x="80" y="26"></rect><rect fill="#7652ff" height="16" rx="1" width="6" x="90" y="39"></rect><rect fill="#7652ff" height="24" rx="1" width="6" x="100" y="31"></rect><rect fill="#7652ff" height="39" rx="1" width="6" x="110" y="16"></rect><rect fill="#7652ff" height="47" rx="1" width="6" x="120" y="8"></rect><rect fill="#7652ff" height="25" rx="1" width="6" x="130" y="30"></rect><rect fill="#7652ff" height="35" rx="1" width="6" x="140" y="20"></rect><rect fill="#7652ff" height="22" rx="1" width="6" x="150" y="33"></rect></svg></div></article>
+</div>
+<div class="monitor-grid"><div class="performance-chart"><h3>Performance over time</h3><div class="legend-monitor"><span style="--c:#7652ff">Accuracy</span><span style="--c:#0871f9">Precision</span><span style="--c:#1baebd">Recall</span><span style="--c:#ff8a33">F1 Score</span></div><div class="monitor-axis"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><div class="monitor-plot"><svg preserveaspectratio="none" viewbox="0 0 650 190"><polyline fill="none" points="0,28 55,34 110,25 165,31 220,27 275,20 330,26 385,18 440,28 495,21 550,27 600,18 650,24" stroke="#7652ff" stroke-width="2"></polyline><polyline fill="none" points="0,49 55,39 110,54 165,41 220,48 275,34 330,42 385,31 440,44 495,35 550,42 600,30 650,38" stroke="#0871f9" stroke-width="2"></polyline><polyline fill="none" points="0,70 55,76 110,63 165,72 220,61 275,69 330,57 385,65 440,54 495,62 550,50 600,57 650,51" stroke="#1baebd" stroke-width="2"></polyline><polyline fill="none" points="0,101 55,109 110,96 165,110 220,99 275,107 330,94 385,103 440,91 495,100 550,88 600,96 650,87" stroke="#ff8a33" stroke-width="2"></polyline></svg></div><div class="monitor-dates"><span>May 23</span><span>May 30</span><span>Jun 6</span><span>Jun 13</span><span>Jun 20</span></div></div><aside class="status-card"><h3>System status</h3><div class="status-row"><b>✓</b><div>All models running<span>Operational</span></div></div><div class="status-row"><b>✓</b><div>Data pipelines<span>Healthy</span></div></div><div class="status-row"><b>✓</b><div>Data freshness<span>Up to date</span></div></div><div class="status-row"><b>✓</b><div>Alerts<span>No issues</span></div></div></aside></div>
+<div class="monitor-alert"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"></path><path d="M10 21h4"></path></svg></div><div><b>No issues detected</b><p>All models are performing within expected thresholds. We’ll alert you if anything changes.</p></div><button class="alert-btn">View alert settings   ⚙</button></div>
+</section>
+</main>
+<main class="ai-page" id="page7">
+<section class="ai-intro"><div class="step">STEP 7</div><h1>Understand <span>every result</span></h1><p>Our explainable AI shows you what drives every prediction so you can trust it and act on it.</p><div class="ai-benefits"><div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M4 19V9M10 19v-5M16 19V7M22 19V3"></path></svg></div><div><b>Built-in explainability</b><p>See the key factors that drive each prediction.</p></div></div><div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg></div><div><b>Clear and intuitive</b><p>Understand results with simple, human-readable explanations.</p></div></div><div class="ai-benefit"><div class="ai-icon"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="m9 12 2 2 4-5"></path></svg></div><div><b>From insight to action</b><p>Turn explanations into confident decisions and better outcomes.</p></div></div></div><div class="ai-note"><div class="ai-icon"><svg viewbox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"></path><path d="M9 12l2 2 4-4"></path></svg></div>Explainability is built into our models—not added on as an afterthought.</div></section>
+<section class="ai-shell"><div class="ai-head"><div><h2>What drives this prediction?</h2><p>Example: Churn Prediction</p></div><div class="ai-select">▣   Churn Prediction  ⌄</div></div>
+<div class="xai-top"><article class="factor-card"><h3>Top factors driving churn risk</h3><p>Impact on this prediction</p>
+<div class="factor-row"><span>Tenure (months)</span><i class="factorbar" style="--w:95%;--bar:#ff0d61"></i><span class="factor-value">+0.42</span></div><div class="factor-row"><span>Support Tickets (30d)</span><i class="factorbar" style="--w:72%;--bar:#ff0d61"></i><span class="factor-value">+0.31</span></div><div class="factor-row"><span>Payment Failures</span><i class="factorbar" style="--w:61%;--bar:#ff2f74"></i><span class="factor-value">+0.26</span></div><div class="factor-row"><span>Engagement Score</span><i class="factorbar" style="--w:48%;--bar:#9a7af2"></i><span class="factor-value">-0.21</span></div><div class="factor-row"><span>Last Login (days)</span><i class="factorbar" style="--w:42%;--bar:#9a7af2"></i><span class="factor-value">-0.18</span></div><div class="factor-row"><span>Contract Type</span><i class="factorbar" style="--w:29%;--bar:#9a7af2"></i><span class="factor-value">-0.12</span></div><div class="factor-row"><span>Usage Frequency</span><i class="factorbar" style="--w:21%;--bar:#9a7af2"></i><span class="factor-value">-0.09</span></div><div class="factor-row"><span>Device Changes</span><i class="factorbar" style="--w:16%;--bar:#9a7af2"></i><span class="factor-value">-0.07</span></div><div class="factor-axis"><span>Lower churn risk</span><span>Higher churn risk</span></div></article>
+<article class="read-card"><h3>How to read this</h3><div class="read-point"><div class="ai-icon" style="color:#ff0d61;background:#fff0f5">↑</div><div><b>Positive values increase</b><p>the chance of churn.</p></div></div><div class="read-point"><div class="ai-icon" style="color:#7652ff;background:#f3efff">↓</div><div><b>Negative values decrease</b><p>the chance of churn.</p></div></div><div class="read-point"><div class="ai-icon">ⓘ</div><div><p>Values show the impact of each factor for this customer.</p></div></div><div class="insight-box"><span>💡</span><span>Customers with these patterns are 3.2x more likely to churn in the next 30 days.</span></div></article></div>
+<div class="xai-bottom"><article class="xai-card-new"><h3>What this means</h3><div class="meaning-row"><div class="ai-icon" style="color:#ff0d61;background:#fff0f5">↗</div><div><b>Higher risk</b><p>This customer shows several high-risk signals.</p></div></div><div class="meaning-row"><div class="ai-icon" style="color:#16a86a;background:#ecfaf4">↓</div><div><b>Action opportunity</b><p>Addressing the top factors can significantly reduce churn risk.</p></div></div><div class="meaning-row"><div class="ai-icon">✓</div><div><b>Model confidence</b><p>The model is highly confident in this prediction.</p></div></div></article><article class="xai-card-new"><h3>Recommended actions</h3><div class="action-row"><b>✓</b><div><b>Follow up on recent support tickets</b><br/><span>Resolve open issues quickly.</span></div></div><div class="action-row"><b>✓</b><div><b>Review payment method</b><br/><span>Ensure billing information is up to date.</span></div></div><div class="action-row"><b>✓</b><div><b>Re-engage the customer</b><br/><span>Send a personalized offer or reminder.</span></div></div><div class="xai-btn">Create action in your CRM   →</div></article><article class="xai-card-new prediction"><h3>◎   Example prediction</h3><small>Customer ID</small><b style="display:block;margin:4px 0 15px">CUST-89214</b><small>Churn risk</small><div style="display:flex;justify-content:space-between;align-items:end"><span class="risk">High</span><small>82% probability</small></div><div class="riskbar"></div><div class="pred-grid"><div>Prediction window<b>Next 30 days</b></div><div>Model<b>Churn Prediction v2.1</b></div></div><div class="xai-btn">View full prediction   →</div></article></div>
+</section>
+</main>
+<main class="main6" id="page8">
+<section class="intro6">
+<h1>More</h1>
+<p>Everything you need to succeed.<br/>We’re with you every step of the way.</p>
+<div class="dashmock6">
+<div class="dashside6"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="dashbody6">
+<div class="dashchart6"></div>
+<div class="dashlower6">
+<div class="donut6"></div>
+<div class="listmock6"></div>
+</div>
+</div>
+</div>
+<div class="curve6"></div>
+</section>
+<section class="services6">
+<article class="service6">
+<div class="serviceicon6"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h10M18 18h2"></path>
+<circle cx="16" cy="6" r="2"></circle>
+<circle cx="10" cy="12" r="2"></circle>
+<circle cx="16" cy="18" r="2"></circle>
+</svg></div>
+<div>
+<h3>Full configuration</h3>
+<p>We handle the full setup of your data, reports, and models—tailored to your business.</p>
+</div>
+</article>
+<article class="service6">
+<div class="serviceicon6"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M3 9l9-5 9 5-9 5-9-5Z"></path>
+<path d="M7 12v5.5c0 .9 2.2 2.5 5 2.5s5-1.6 5-2.5V12"></path>
+<path d="M21 9v6"></path>
+</svg></div>
+<div>
+<h3>Personal tutorial</h3>
+<p>We walk you through everything you need to know to get the most out of PorterMetrics.</p>
+</div>
+</article>
+<article class="service6">
+<div class="serviceicon6"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"></path>
+<path d="M10 21h4"></path>
+</svg></div>
+<div>
+<h3>Custom alerts</h3>
+<p>Get notified about what matters most. We set up alerts so you never miss important changes.</p>
+</div>
+</article>
+<article class="service6">
+<div class="serviceicon6"><svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="16" rx="2" width="18" x="3" y="5"></rect>
+<path d="M7 3v4M17 3v4M3 10h18"></path>
+<path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+</svg></div>
+<div>
+<h3>Monthly meetings<br/>to review results</h3>
+<p>We meet with you every month to review performance, insights, and opportunities.</p>
+</div>
+</article>
+<article class="service6">
+<div class="serviceicon6"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M4 19V9M10 19v-5M16 19V7M22 19V3"></path>
+<path d="m3 10 6-5 5 4 7-7"></path>
+<path d="M18 2h3v3"></path>
+</svg></div>
+<div>
+<h3>Business performance review</h3>
+<p>We provide a deep dive into your KPIs, trends, and model performance with actionable recommendations.
               </p>
-              <p><b style="color:#0871f9">↓</b> &nbsp; More support tickets and payment failures increase churn
-                probability.</p>
-              <p><b style="color:#7652ff">ⓘ</b> &nbsp; Use these insights to take proactive actions and retain more
-                customers.</p>
-            </div>
-            <div class="xaicard5 report5">
-              <h4>▣ &nbsp; Monthly Model Report</h4>
-              <p>Receive a monthly report with model results, key insights, and explainability breakdown.</p>
-              <div class="reportbtn5">View latest report &nbsp; →</div>
-              <div class="nextreport5">Next report: Jun 1, 2026</div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <main class="main6" id="page6">
-        <section class="intro6">
-          <h1>More</h1>
-          <p>Everything you need to succeed.<br>We’re with you every step of the way.</p>
-          <div class="dashmock6">
-            <div class="dashside6"><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="dashbody6">
-              <div class="dashchart6"></div>
-              <div class="dashlower6">
-                <div class="donut6"></div>
-                <div class="listmock6"></div>
-              </div>
-            </div>
-          </div>
-          <div class="curve6"></div>
-        </section>
-        <section class="services6">
-          <article class="service6">
-            <div class="serviceicon6"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h10M18 18h2" />
-                <circle cx="16" cy="6" r="2" />
-                <circle cx="10" cy="12" r="2" />
-                <circle cx="16" cy="18" r="2" />
-              </svg></div>
-            <div>
-              <h3>Full configuration</h3>
-              <p>We handle the full setup of your data, reports, and models—tailored to your business.</p>
-            </div>
-          </article>
-          <article class="service6">
-            <div class="serviceicon6"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 9l9-5 9 5-9 5-9-5Z" />
-                <path d="M7 12v5.5c0 .9 2.2 2.5 5 2.5s5-1.6 5-2.5V12" />
-                <path d="M21 9v6" />
-              </svg></div>
-            <div>
-              <h3>Personal tutorial</h3>
-              <p>We walk you through everything you need to know to get the most out of PorterMetrics.</p>
-            </div>
-          </article>
-          <article class="service6">
-            <div class="serviceicon6"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z" />
-                <path d="M10 21h4" />
-              </svg></div>
-            <div>
-              <h3>Custom alerts</h3>
-              <p>Get notified about what matters most. We set up alerts so you never miss important changes.</p>
-            </div>
-          </article>
-          <article class="service6">
-            <div class="serviceicon6"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="16" rx="2" />
-                <path d="M7 3v4M17 3v4M3 10h18" />
-                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
-              </svg></div>
-            <div>
-              <h3>Monthly meetings<br>to review results</h3>
-              <p>We meet with you every month to review performance, insights, and opportunities.</p>
-            </div>
-          </article>
-          <article class="service6">
-            <div class="serviceicon6"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 19V9M10 19v-5M16 19V7M22 19V3" />
-                <path d="m3 10 6-5 5 4 7-7" />
-                <path d="M18 2h3v3" />
-              </svg></div>
-            <div>
-              <h3>Business performance review</h3>
-              <p>We provide a deep dive into your KPIs, trends, and model performance with actionable recommendations.
-              </p>
-            </div>
-          </article>
-        </section>
-        <section class="right6">
-          <article class="consult6">
-            <div class="consulthead6">
-              <div class="slack6"><i></i><i></i><i></i><i></i></div>
-              <div><span class="always6">Always here for you</span>
-                <h2>Data Consulting</h2>
-                <p>Ask us anything. Get expert help from our team via your dedicated Slack channel.</p>
-              </div>
-            </div>
-            <div class="checks6">
-              <div class="check6"><b>✓</b>Full assistance from our data experts</div>
-              <div class="check6"><b>✓</b>Answers to any question, any time</div>
-              <div class="check6"><b>✓</b>Share questions, files, and insights easily</div>
-              <div class="check6"><b>✓</b>Fast, friendly, and reliable support</div>
-            </div>
-            <div class="slackbtn6">Open Slack Channel &nbsp; →</div>
-          </article>
-          <article class="reco6">
-            <h2>Strategic recommendations</h2>
-            <p>We go beyond the numbers—giving you clear, data-driven recommendations to grow your business.</p>
-            <div class="recoline6"><span class="rico6">◎</span>Identify growth opportunities</div>
-            <div class="recoline6"><span class="rico6">◈</span>Improve marketing &amp; sales performance</div>
-            <div class="recoline6"><span class="rico6">♙</span>Optimize customer experience &amp; retention</div>
-            <div class="recoline6"><span class="rico6">$</span>Increase profitability &amp; reduce costs</div>
-          </article>
-        </section>
-      </main>
-
-      <main class="main7" id="page7">
-        <section class="final7">
-          <div class="brandcard7">
-            <span class="alto">Alto.AI</span><span class="cross">×</span>
-            <span class="porter"><span class="porterlogo"><i></i><i></i><i></i></span>portermetrics</span>
-          </div>
-          <h1>Your data.<br>Our AI. <span>Real results.</span></h1>
-          <p>Turn your data into a competitive advantage<br>with AI that delivers.</p>
-          <button class="finalcta7" data-demo>Book a Demo <span>→</span></button>
-          <div class="finalbenefits7">
-            <div><b class="check7">✓</b>Personalized walkthrough</div><i></i>
-            <div><b class="check7">✓</b>See real results</div><i></i>
-            <div><b class="check7">✓</b>No commitment</div>
-          </div>
-          <div class="secure7">
-            <div class="shield7"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3 20 6v6c0 5-3.4 8.2-8 10-4.6-1.8-8-5-8-10V6l8-3Z" />
-                <path d="m9.2 12 1.8 1.8 3.8-4" />
-              </svg></div>
-            <div><b>Your data is secure.</b>Enterprise-grade security with 99.9% uptime.</div>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <div class="progwrap">
-          <div class="counter"><strong id="current">1</strong><span>/ 7</span></div>
-          <div class="bar"><i id="progress"></i></div>
-        </div>
-        <div class="hint">Use ← → or Space to continue</div>
-        <div class="navs"><button class="nav" id="prev">←</button><button class="nav next" id="next">→</button></div>
-      </footer>
-    </div>
-  </div>
-  <script>
+</div>
+</article>
+</section>
+<section class="right6">
+<article class="consult6">
+<div class="consulthead6">
+<div class="slack6"><i></i><i></i><i></i><i></i></div>
+<div><span class="always6">Always here for you</span>
+<h2>Data Consulting</h2>
+<p>Ask us anything. Get expert help from our team via your dedicated Slack channel.</p>
+</div>
+</div>
+<div class="checks6">
+<div class="check6"><b>✓</b>Full assistance from our data experts</div>
+<div class="check6"><b>✓</b>Answers to any question, any time</div>
+<div class="check6"><b>✓</b>Share questions, files, and insights easily</div>
+<div class="check6"><b>✓</b>Fast, friendly, and reliable support</div>
+</div>
+<div class="slackbtn6">Open Slack Channel   →</div>
+</article>
+<article class="reco6">
+<h2>Strategic recommendations</h2>
+<p>We go beyond the numbers—giving you clear, data-driven recommendations to grow your business.</p>
+<div class="recoline6"><span class="rico6">◎</span>Identify growth opportunities</div>
+<div class="recoline6"><span class="rico6">◈</span>Improve marketing &amp; sales performance</div>
+<div class="recoline6"><span class="rico6">♙</span>Optimize customer experience &amp; retention</div>
+<div class="recoline6"><span class="rico6">$</span>Increase profitability &amp; reduce costs</div>
+</article>
+</section>
+</main>
+<main class="main7" id="page9">
+<section class="final7">
+<div class="brandcard7">
+<span class="alto">Alto.AI</span><span class="cross">×</span>
+<span class="porter"><span class="porterlogo"><i></i><i></i><i></i></span>portermetrics</span>
+</div>
+<h1>Your data.<br/>Our AI. <span>Real results.</span></h1>
+<p>Turn your data into a competitive advantage<br/>with AI that delivers.</p>
+<button class="finalcta7" data-demo="">Book a Demo <span>→</span></button>
+<div class="finalbenefits7">
+<div><b class="check7">✓</b>Personalized walkthrough</div><i></i>
+<div><b class="check7">✓</b>See real results</div><i></i>
+<div><b class="check7">✓</b>No commitment</div>
+</div>
+<div class="secure7">
+<div class="shield7"><svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 3 20 6v6c0 5-3.4 8.2-8 10-4.6-1.8-8-5-8-10V6l8-3Z"></path>
+<path d="m9.2 12 1.8 1.8 3.8-4"></path>
+</svg></div>
+<div><b>Your data is secure.</b>Enterprise-grade security with 99.9% uptime.</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="progwrap">
+<div class="counter"><strong id="current">1</strong><span>/ 9</span></div>
+<div class="bar"><i id="progress"></i></div>
+</div>
+<div class="hint">Use ← → or Space to continue</div>
+<div class="navs"><button class="nav" id="prev">←</button><button class="nav next" id="next">→</button></div>
+</footer>
+</div>
+</div>
+<script>
     const stage = document.getElementById('stage'); function fit() { stage.style.transform = `scale(${Math.min(innerWidth / 1536, innerHeight / 1024)})` } fit(); addEventListener('resize', fit);
     document.querySelectorAll('.conn').forEach(c => c.onclick = () => { document.querySelectorAll('.conn').forEach(x => { x.classList.remove('active'); x.querySelector('.check')?.remove() }); c.classList.add('active'); const s = document.createElement('span'); s.className = 'check'; s.textContent = '✓'; c.appendChild(s) });
     document.querySelectorAll('[data-demo]').forEach(x => x.onclick = () => window.open('https://calendly.com/toni-altoai', '_blank'));
-    let page = 0; const pages = [document.getElementById('page1'), document.getElementById('page2'), document.getElementById('page3'), document.getElementById('page4'), document.getElementById('page5'), document.getElementById('page6'), document.getElementById('page7')], side = [...document.querySelectorAll('.sideitem')];
-    function go(n) { n = Math.max(0, Math.min(6, n)); pages.forEach((p, i) => { p.classList.toggle('activepage', i === n); p.classList.toggle('before', i < n) }); side.forEach((s, i) => s.classList.toggle('active', i === n)); page = n; document.getElementById('current').textContent = n + 1; document.getElementById('progress').style.width = ((n + 1) / 7 * 100) + '%'; }
+    let page = 0; const pages = Array.from({length:9},(_,i)=>document.getElementById('page'+(i+1))), side = [...document.querySelectorAll('.sideitem')];
+    function go(n) { n = Math.max(0, Math.min(8, n)); pages.forEach((p, i) => { p.classList.toggle('activepage', i === n); p.classList.toggle('before', i < n) }); side.forEach((s, i) => s.classList.toggle('active', i === n)); page = n; document.getElementById('current').textContent = n + 1; document.getElementById('progress').style.width = ((n + 1) / 9 * 100) + '%'; }
     document.getElementById('next').onclick = () => go(page + 1); document.getElementById('prev').onclick = () => go(page - 1); document.querySelectorAll('[data-slide]').forEach(x => x.onclick = () => go(+x.dataset.slide)); addEventListener('keydown', e => { if (['ArrowRight', ' ', 'PageDown'].includes(e.key)) { e.preventDefault(); go(page + 1) } if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); go(page - 1) } }); go(0);
   </script>
 </body>
-
 </html>
