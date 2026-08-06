@@ -27,7 +27,7 @@ export class AppComponent {
   ];
 
   services = [
-    ['01','Data Engineering','One reliable source of truth','20+ connectors|Up to two years of data|BigQuery setup|Blended sales and MER'],
+    ['01','Data Engineering','One reliable source of truth','30+ connectors|Up to two years of data|BigQuery setup|Blended sales and MER'],
     ['02','Analytics','See what is happening now','100+ dashboards|Claude data analyst|Monthly analysis|Custom alerts'],
     ['03','Data Science','Know what happens next','Customer segmentation|Churn prediction|Purchase prediction|Sales forecasting'],
     ['04','Managed Service','Your external data team','Full configuration|Personal tutorial|Private Slack channel|Continuous monitoring'],
