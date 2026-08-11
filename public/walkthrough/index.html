@@ -3816,7 +3816,8 @@
   </div>
   <script>
     const stage = document.getElementById('stage'); function fit() { stage.style.transform = `scale(${Math.min(innerWidth / 1536, innerHeight / 1024)})` } fit(); addEventListener('resize', fit);
-    document.querySelectorAll('.conn').forEach(c => c.onclick = () => { document.querySelectorAll('.conn').forEach(x => { x.classList.remove('active'); x.querySelector('.check')?.remove() }); c.classList.add('active'); const s = document.createElement('span'); s.className = 'check'; s.textContent = '✓'; c.appendChild(s) });
+    // Data-source cards are intentionally static for presentation use.
+    document.querySelectorAll('.conn').forEach(c => { c.tabIndex = -1; c.style.pointerEvents = 'none'; });
     document.querySelectorAll('[data-demo]').forEach(x => x.onclick = () => window.open('https://calendly.com/toni-altoai', '_blank'));
     let page = 0; const pages = [document.getElementById('page1'), document.getElementById('page2'), document.getElementById('page3'), document.getElementById('page4'), document.getElementById('page5'), document.getElementById('page6'), document.getElementById('page7')], side = [...document.querySelectorAll('.sideitem')];
     function go(n) { n = Math.max(0, Math.min(6, n)); pages.forEach((p, i) => { p.classList.toggle('activepage', i === n); p.classList.toggle('before', i < n) }); side.forEach((s, i) => s.classList.toggle('active', i === n)); page = n; document.getElementById('current').textContent = n + 1; document.getElementById('progress').style.width = ((n + 1) / 7 * 100) + '%'; }
